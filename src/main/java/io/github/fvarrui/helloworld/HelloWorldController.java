@@ -33,7 +33,7 @@ public class HelloWorldController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		File info = new File("info.txt");
+		File info = new File("./info.txt");
 		pathLabel.setText(info.getAbsolutePath());
 
 		try {
