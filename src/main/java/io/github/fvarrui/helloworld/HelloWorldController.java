@@ -22,7 +22,7 @@ public class HelloWorldController implements Initializable {
 	private VBox root;
 	
 	@FXML
-	private Label infoLabel;
+	private Label infoLabel, pathLabel;
 	
 	public HelloWorldController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HelloWorldView.fxml"));
@@ -34,6 +34,7 @@ public class HelloWorldController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		File info = new File("info.txt");
+		pathLabel.setText(info.getAbsolutePath());
 
 		try {
 			String content = FileUtils.readFileToString(info, Charset.forName("UTF-8"));

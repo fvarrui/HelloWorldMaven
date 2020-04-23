@@ -8,5 +8,6 @@
 	xmlns="http://javafx.com/javafx/11.0.1">
 	<children>
 		<Label fx:id="infoLabel" style="-fx-font-size: 14pt;"/>
+		<Label fx:id="pathLabel"/>
 	</children>
 </VBox>
