@@ -13,5 +13,5 @@ export PATH=${info.envPath}
 #if($info.administratorRequired)
 /usr/bin/osascript -e "do shell script \"$JAVA ${info.vmArgs} -Dapple.laf.useScreenMenuBar=true -Xdock:name='${info.displayName}' -Xdock:icon=$SCRIPTPATH/../Resources/${info.name}.icns -jar $BINARY $@\" with administrator privileges"
 #else
-$JAVA ${info.vmArgs} -Dapple.laf.useScreenMenuBar=true -Xdock:name="${info.displayName}" -Xdock:icon=$SCRIPTPATH/../Resources/${info.name}.icns -cp "$SCRIPTPATH/../Resources/Java/;." -jar $BINARY $@
+$JAVA ${info.vmArgs} -Dapple.laf.useScreenMenuBar=true -Xdock:name="${info.displayName}" -Xdock:icon=$SCRIPTPATH/../Resources/${info.name}.icns -cp "$SCRIPTPATH/../Resources;." -jar $BINARY $@
 #end
