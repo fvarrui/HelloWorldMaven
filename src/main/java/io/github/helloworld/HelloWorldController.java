@@ -1,4 +1,4 @@
-package io.github.fvarrui.helloworld;
+package io.github.helloworld;
 
 import java.io.File;
 import java.io.IOException;

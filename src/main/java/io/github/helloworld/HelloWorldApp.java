@@ -1,4 +1,4 @@
-package io.github.fvarrui.helloworld;
+package io.github.helloworld;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
