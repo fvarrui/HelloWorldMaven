@@ -1,4 +1,4 @@
-package io.github.helloworld;
+package io.github.fvarrui.helloworld;
 
 import java.awt.FlowLayout;
 import java.io.File;

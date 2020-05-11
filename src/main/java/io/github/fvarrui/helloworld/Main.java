@@ -1,4 +1,4 @@
-package io.github.helloworld;
+package io.github.fvarrui.helloworld;
 
 public class Main {
 
