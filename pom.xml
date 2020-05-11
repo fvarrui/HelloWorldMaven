@@ -29,6 +29,7 @@
 						<configuration>
 							<mainClass>io.github.helloworld.Main</mainClass>
 							<bundleJre>true</bundleJre>
+							<jrePath>C:\Program Files\Java\jre1.8.0_231</jrePath>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
@@ -40,16 +41,6 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-controls</artifactId>
-			<version>11.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-fxml</artifactId>
-			<version>11.0.1</version>
-		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
