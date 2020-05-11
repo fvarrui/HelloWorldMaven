@@ -12,7 +12,6 @@
 		<maven.compiler.target>8</maven.compiler.target>
 		<maven.compiler.source>8</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<exec.mainClass>io.github.helloworld.Main</exec.mainClass>
 	</properties>
 
 	<build>
@@ -28,6 +27,7 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
+							<mainClass>io.github.helloworld.Main</mainClass>
 							<bundleJre>true</bundleJre>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
