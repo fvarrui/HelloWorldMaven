@@ -41,7 +41,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>0.9.7</version>
+				<version>0.9.8-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -50,12 +50,17 @@
 						</goals>
 						<configuration>
 							<mainClass>${mainClass}</mainClass>
-							<bundleJre>false</bundleJre>
+							<bundleJre>true</bundleJre>
 							<runnableJar>${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar</runnableJar>
 							<copyDependencies>false</copyDependencies>
+							<platform>auto</platform>
+							<createTarball>true</createTarball>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
+							<winConfig>
+								<headerType>console</headerType>
+							</winConfig>
 						</configuration>
 					</execution>
 				</executions>

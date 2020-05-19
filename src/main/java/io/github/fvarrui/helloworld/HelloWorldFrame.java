@@ -48,6 +48,7 @@ public class HelloWorldFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println("Starting app ... ");
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new HelloWorldFrame();
