@@ -58,13 +58,10 @@
 						<configuration>
 							<mainClass>${mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
-							<platform>mac</platform>
+							<platform>auto</platform>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
-							<extra>
-								<yeah>this is my custom param</yeah>
-							</extra>
 						</configuration>
 					</execution>
 				</executions>
