@@ -14,6 +14,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mainClass>io.github.fvarrui.helloworld.Main</mainClass>
 	</properties>
+	
+	<licenses>
+		<license>
+			<name>GPL-v3.0</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.tx</url>
+		</license>
+	</licenses>
 
 	<build>
 		<plugins>
@@ -41,7 +48,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>0.9.8-SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -51,16 +58,13 @@
 						<configuration>
 							<mainClass>${mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
-							<runnableJar>${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar</runnableJar>
-							<copyDependencies>false</copyDependencies>
-							<platform>auto</platform>
-							<createTarball>true</createTarball>
+							<platform>mac</platform>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
-							<winConfig>
-								<headerType>console</headerType>
-							</winConfig>
+							<extra>
+								<yeah>this is my custom param</yeah>
+							</extra>
 						</configuration>
 					</execution>
 				</executions>
