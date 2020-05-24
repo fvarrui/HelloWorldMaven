@@ -34,7 +34,7 @@ public class HelloWorldFrame extends JFrame {
 	}
 
 	public void initFrame() {
-		setSize(320, 200);
+		setSize(640, 200);
 		setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

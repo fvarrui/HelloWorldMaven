@@ -42,6 +42,7 @@
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
 							<envPath>/bin:/usr/bin</envPath>
+							<generateInstaller>false</generateInstaller>
 						</configuration>
 					</execution>
 				</executions>
