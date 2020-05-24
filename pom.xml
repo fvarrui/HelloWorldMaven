@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mainClass>io.github.fvarrui.helloworld.Main</mainClass>
 	</properties>
-	
+
 	<licenses>
 		<license>
 			<name>GPL-v3.0</name>
@@ -24,27 +24,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>${mainClass}</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
@@ -58,10 +37,11 @@
 						<configuration>
 							<mainClass>${mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
-							<platform>auto</platform>
+							<platform>mac</platform>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
+							<envPath>/bin:/usr/bin</envPath>
 						</configuration>
 					</execution>
 				</executions>
