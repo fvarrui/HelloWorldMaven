@@ -1,10 +1,10 @@
 package io.github.fvarrui.helloworld;
 
-import java.awt.FlowLayout;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
@@ -14,31 +14,23 @@ import org.apache.commons.io.FileUtils;
 @SuppressWarnings("serial")
 public class HelloWorldFrame extends JFrame {
 
-	public HelloWorldFrame() {
+	public HelloWorldFrame() throws IOException {
 		super("Hello World");
 		initFrame();
         initContent();
         setVisible(true);
 	}
 
-	public void initContent() {
-		JLabel contentLabel = new JLabel("Hello World");
+	public void initContent() throws IOException {
 
-		JLabel pathLabel = new JLabel("Hello World");
-        
 		File info = new File("info.txt");
-		pathLabel.setText(info.getAbsolutePath());
 
-		try {
-			String content = FileUtils.readFileToString(info, Charset.forName("UTF-8"));
-			contentLabel.setText(content);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		String content = FileUtils.readFileToString(info, Charset.forName("UTF-8"));
 
-        getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER));
-        getContentPane().add(contentLabel);
-        getContentPane().add(pathLabel);
+        getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+        getContentPane().add(new JLabel(content));
+        getContentPane().add(new JLabel(info.getAbsolutePath()));
+        getContentPane().add(new JLabel("PATH=" + System.getenv("PATH")));
 	}
 
 	public void initFrame() {
@@ -52,7 +44,11 @@ public class HelloWorldFrame extends JFrame {
 		System.out.println("PATH=" + System.getenv("PATH"));
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new HelloWorldFrame();
+                try {
+					new HelloWorldFrame();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
             }
         });
 	}
