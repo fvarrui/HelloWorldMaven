@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+    <Product Id="ca504fa7-8385-4289-bab5-81a198ea4733" Codepage="1252" Language="1033" Manufacturer="ACME" Name="HelloWorld" UpgradeCode="d2478cf4-2af0-49c5-b57e-5c14ce8fca01" Version="1.0.0.0">
+        <Package Compressed="yes" InstallScope="perMachine" InstallerVersion="200" Languages="1033" Platform="x64" SummaryCodepage="1252"/>
+        <Media Id="1" Cabinet="Application.cab" EmbedCab="yes"/>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+	            <Directory Id="INSTALLDIR" Name="HelloWorld">
+	                <Component Id="_37de1418_8abe_42d3_9209_dbf017c115b8" Guid="3f70a32b-3e12-4e7a-b568-8e9f77698bb5" Win64="yes">
+	                    <File Id="_3f65ca8c_2d29_4464_8297_df636915bf63" Name="HelloWorld.exe" KeyPath="yes" DiskId="1" Source="target\HelloWorld\HelloWorld.exe"/>
+	                </Component>
+	                <Component Id="_fe195234_c052_4ad9_8158_a6bb1fbdf583" Guid="4d4ca194-e583-4f2b-aaad-2ef948b328e2" Win64="yes">
+	                    <File Id="_4e335ab6_a3c4_47e5_97cf_cad095870847" Name="HelloWorld.ico" KeyPath="yes" DiskId="1" Source="target\HelloWorld\HelloWorld.ico"/>
+	                </Component>
+	                <Component Id="_663dd283_05be_4506_996c_6edef4173176" Guid="5fca86f6-12ee-4cba-a992-ee3ef6592fe1" Win64="yes">
+	                    <File Id="_b74e6bd5_2586_4f4d_aa7b_8a49ac46624f" Name="info.txt" KeyPath="yes" DiskId="1" Source="target\HelloWorld\info.txt"/>
+	                </Component>
+	                <Directory Id="_44814182_8ac5_457a_8ead_1fb90b6e6c0c" Name="jre">
+	                    <Directory Id="_89544ac2_80c4_40f3_9bcd_e6cd1a8ab3d3" Name="bin">
+	                        <Component Id="_96451815_9278_4351_bb57_0fe5aceb8e03" Guid="793b438e-4a96-4648-990f-e0e6f6afb83e" Win64="yes">
+	                            <File Id="_54228f70_68d1_4031_bc1e_d51b619689a6" Name="api-ms-win-core-console-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-console-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_ef6850a6_bd7b_4657_b050_7f6d6c1cfeeb" Guid="995f3ae0-8346-43af-bdaf-3e476e5087c1" Win64="yes">
+	                            <File Id="_a42f996e_f31d_4c61_9ff3_b5a7d3eadb84" Name="api-ms-win-core-datetime-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-datetime-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_f3a902a4_4222_41de_9aa1_d6e2f9cbb83a" Guid="6144af25-e333-46e9-9edf-24ad2f98f24d" Win64="yes">
+	                            <File Id="_7a7121a0_234a_4df9_aaf2_f433c8a8788c" Name="api-ms-win-core-debug-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-debug-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_634021e6_7239_47e1_896a_5af9a75755a3" Guid="778ff3b2-f713-4a84-ab4b-a437c22ea57b" Win64="yes">
+	                            <File Id="_1a34565a_0fbc_4b87_8d97_239e4d615bd4" Name="api-ms-win-core-errorhandling-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_bffa80cd_16ca_49a4_a6af_9ac55be08853" Guid="d1a236f8-0146-49ec-b3b8-60e188864933" Win64="yes">
+	                            <File Id="_4425396e_6fdc_402b_ab5b_ed6e019e018e" Name="api-ms-win-core-file-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-file-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_cf813bde_b552_4483_8cca_110de0f6317b" Guid="6b80e494-d1e3-46ee-b5c4-858273ba68ca" Win64="yes">
+	                            <File Id="_22f377f3_8074_45c7_82ca_0bca858c17f4" Name="api-ms-win-core-file-l1-2-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-file-l1-2-0.dll"/>
+	                        </Component>
+	                        <Component Id="_4c89e131_4001_4df8_aa78_acb0116a7727" Guid="0977e635-c6b2-4f0b-a074-1ceb0cfad35b" Win64="yes">
+	                            <File Id="_0d0122b3_6f20_474f_ba60_802ac91c1532" Name="api-ms-win-core-file-l2-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-file-l2-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_3e7f2ce8_a899_4e7d_86fb_74eb930212e5" Guid="23300a30-6a33-40dc-a58d-087aa5826cdd" Win64="yes">
+	                            <File Id="_fc8756de_ece6_4f3b_aaba_a9875e5e23ab" Name="api-ms-win-core-handle-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-handle-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_51a24a62_21ca_4b5f_b4c5_56281084b932" Guid="b2cd088a-83b6-4b54-9a91-3857cc9aa683" Win64="yes">
+	                            <File Id="_1aff4281_ff2d_4ef6_956d_0ac7d2bf1c14" Name="api-ms-win-core-heap-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-heap-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_3ea898ab_617e_41b6_9426_cca8958fe2fc" Guid="fe6c6164-dd48-42dc-bca3-870a6c5a5d3a" Win64="yes">
+	                            <File Id="_98d64445_20c5_4166_9e0b_3c2cb65cd99e" Name="api-ms-win-core-interlocked-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_d0117d1f_6c47_4187_b27a_98f009ffba56" Guid="bbe687d4-7e89-4fc2-8685-971c899309ab" Win64="yes">
+	                            <File Id="_a03e673e_b8ea_4cbf_88c7_a67605558331" Name="api-ms-win-core-libraryloader-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_b831ac41_79ea_41cf_998b_78f62807783f" Guid="bfc98367-8f77-4c17-96fc-d4425a3bc6a6" Win64="yes">
+	                            <File Id="_f9d9d269_5583_4dc3_bc63_d3d22e86fe2c" Name="api-ms-win-core-localization-l1-2-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-localization-l1-2-0.dll"/>
+	                        </Component>
+	                        <Component Id="_bd02efd5_0ce7_4442_bb84_f92b8763b573" Guid="38f0a328-2934-4f45-8898-ad4f5b466f81" Win64="yes">
+	                            <File Id="_5b661423_2674_4582_878b_b5367987a755" Name="api-ms-win-core-memory-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-memory-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_e88f3b5f_17c7_4799_b021_fc32daa63b86" Guid="0500ae35-c4d5-435a-bad4-31bd0ddeb456" Win64="yes">
+	                            <File Id="_96905d3d_ed01_4e89_8fe9_1c5f43250c7a" Name="api-ms-win-core-namedpipe-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_75beccbd_e201_4989_b5af_801ce5d64816" Guid="4f7c422b-de55-4a23-a205-fcdabb43e1b5" Win64="yes">
+	                            <File Id="_88d70f5b_9308_476b_b379_ff456e536264" Name="api-ms-win-core-processenvironment-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_8730cb79_49ff_41dd_8ccb_b6ba995d4738" Guid="c67a008e-ed51-420b-b005-410c2e895d63" Win64="yes">
+	                            <File Id="_9e27d0e9_343f_4ff8_a68d_62a2a6da6f75" Name="api-ms-win-core-processthreads-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_508be8af_a453_4d6b_a677_644aaf242a5b" Guid="b628fe05-4856-4130-9517-f907b71e0034" Win64="yes">
+	                            <File Id="_d5ad0d62_ff97_475d_93a4_8c09e73dfb23" Name="api-ms-win-core-processthreads-l1-1-1.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll"/>
+	                        </Component>
+	                        <Component Id="_5e534d54_334f_43a3_b9b4_9bce6be6b0a7" Guid="44b31d10-4300-4ecb-ba3d-270ec4a05f71" Win64="yes">
+	                            <File Id="_2f1fc669_264f_457b_a346_aa4c7fb7224e" Name="api-ms-win-core-profile-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-profile-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_e04d55e0_576c_4f13_b2b3_d166bd3bd784" Guid="20f8eee6-de23-4f96-a0e7-0d32a898b895" Win64="yes">
+	                            <File Id="_15458c78_2f0b_4633_9712_54187531955c" Name="api-ms-win-core-rtlsupport-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_ec695fbc_dd51_43b9_97b3_e7c0691b5092" Guid="7c97909f-45f7-497e-9554-3c7f67c48d06" Win64="yes">
+	                            <File Id="_83697002_7253_494a_9d20_b62329c8d77a" Name="api-ms-win-core-string-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-string-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_fed36eb7_58a6_4852_84ed_dd01895b262e" Guid="259c089d-5e82-473f-87ed-37c33145765e" Win64="yes">
+	                            <File Id="_fdf93e67_2a38_469b_90d5_73732ee77c88" Name="api-ms-win-core-synch-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-synch-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_6d2b2baa_1dc7_4b10_9802_8966823c1d81" Guid="41fc1701-00b6-4851-a71e-67a239ad7cb9" Win64="yes">
+	                            <File Id="_e3de7d6a_9bd7_4499_ab58_404e29389b47" Name="api-ms-win-core-synch-l1-2-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-synch-l1-2-0.dll"/>
+	                        </Component>
+	                        <Component Id="_294457bf_7d65_451d_8bfd_a100fe3c8496" Guid="fcf2bdfc-1276-4e0f-aeb2-a98ffa007515" Win64="yes">
+	                            <File Id="_e7e21f8c_845c_4501_9105_661def84d1b7" Name="api-ms-win-core-sysinfo-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_adeea845_097a_43ba_812b_0c2a2eb969b0" Guid="36a44bde-4eca-4cf6-8d28-7aed4102ea71" Win64="yes">
+	                            <File Id="_c7690dc5_5536_4c0a_b352_24f31da9295c" Name="api-ms-win-core-timezone-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-timezone-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_2d44c0b8_c7b8_4872_8f33_7eaa2fcf91dd" Guid="fc0012e5-0bb3-4aad-bdf7-f5ab082ba136" Win64="yes">
+	                            <File Id="_664e095f_f6a6_463a_abef_91a7d05db6ab" Name="api-ms-win-core-util-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-core-util-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_1668dece_752a_4ace_a311_257e9f409471" Guid="ff3d8266-8c21-413d-b0f7-0f845a029282" Win64="yes">
+	                            <File Id="_d6010435_29b6_4c93_8094_8f9bfc309714" Name="api-ms-win-crt-conio-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-conio-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_04349d6b_48a5_4740_83f6_d64e9e77b8ae" Guid="09146315-c239-490a-8c14-cb78ab1613c4" Win64="yes">
+	                            <File Id="_586c62b8_5138_419c_ae11_e74f2029bd05" Name="api-ms-win-crt-convert-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-convert-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_3fbb80e3_e2be_429b_b064_c7e26d862880" Guid="4d782da8-5bc8-4e4e-9f20-dc1b9606c9ae" Win64="yes">
+	                            <File Id="_acf97d64_efbe_495b_89ed_129a6ca8b8d9" Name="api-ms-win-crt-environment-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-environment-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_01ffe5f6_c955_4371_b3cb_35d413febe7e" Guid="96f453e7-48e7-4e7b-b6df-f6d7a16d3d17" Win64="yes">
+	                            <File Id="_80c36709_d6cb_457b_921a_6818bc7a4cb7" Name="api-ms-win-crt-filesystem-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_9bbd24f9_6f1d_4995_88b1_b0392b09c5e5" Guid="b806eb1c-2f4a-4a62-9533-c95cc8e69b9b" Win64="yes">
+	                            <File Id="_21bd2e07_2194_49e9_97ba_099c22646235" Name="api-ms-win-crt-heap-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-heap-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_64330033_7792_407a_a9d2_7a77e2fa2c15" Guid="677fb6fe-23e5-4420-8f81-8c0af2257bb8" Win64="yes">
+	                            <File Id="_ef13cd46_9f5d_49a9_aec8_28cb46dcf323" Name="api-ms-win-crt-locale-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-locale-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_84fed595_3b6b_4b14_b3d2_7c7a1ba224df" Guid="d408b6e3-5627-47c8-94ce-5bdb5675d9c5" Win64="yes">
+	                            <File Id="_3aa5d397_b45d_465d_8832_5788b8813611" Name="api-ms-win-crt-math-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-math-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_52f2929a_e9fc_4e03_97ea_811fe9d1b06b" Guid="72f75567-38ed-4dc1-be8a-7c2a22dfc4df" Win64="yes">
+	                            <File Id="_5f135401_e07f_48ab_98ed_e02023a6e6b6" Name="api-ms-win-crt-multibyte-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_b6fc80c9_902a_404a_a5af_32333eecb691" Guid="bc794224-62d0-4e71-a9e5-80e7480b2582" Win64="yes">
+	                            <File Id="_0c7f9b57_b72d_4954_a23c_7b8a775a418a" Name="api-ms-win-crt-private-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-private-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_6d651073_9ea7_474d_a9da_fb2e8b3a90b3" Guid="59bd5f51-07a7-486e-9158-eb628b1a8d52" Win64="yes">
+	                            <File Id="_c0d4eea7_3fc2_4d91_a0c9_1b55af1ab7f7" Name="api-ms-win-crt-process-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-process-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_bc1b950a_c147_4c71_be14_60d56285ef2f" Guid="4e0ed38e-92ab-499e-a02a-db73433a3546" Win64="yes">
+	                            <File Id="_f4615f33_1033_4902_a154_da8857b564ed" Name="api-ms-win-crt-runtime-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_76338d89_b5f8_4cd4_b1a7_0500484af32e" Guid="c7a6e146-ac27-48fd-a3d5-85cf7db9e04e" Win64="yes">
+	                            <File Id="_48bf1afe_f7f4_4ff1_9bb9_ff870c94503e" Name="api-ms-win-crt-stdio-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_7774d2c4_1d9e_4126_9715_029ce0afe789" Guid="abb2ba2e-ad04-4c8a-b4fd-b9abd9d02f43" Win64="yes">
+	                            <File Id="_103b0eef_ac71_4230_82f6_86b9bfc76eb4" Name="api-ms-win-crt-string-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-string-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_183c14a7_914c_4516_b619_7f69d3e61512" Guid="b5f6c1d3-6678-41c0-9656-98b0b49a85bf" Win64="yes">
+	                            <File Id="_cb1cf6a8_7053_4847_ba50_683f27e5c275" Name="api-ms-win-crt-time-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-time-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_5f58b826_e553_4d51_abfd_3ca26141deac" Guid="351f5889-d4f2-4e43-928c-70bcfba22fb8" Win64="yes">
+	                            <File Id="_4341d2e4_7151_45ca_b181_cf00e0d134ab" Name="api-ms-win-crt-utility-l1-1-0.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\api-ms-win-crt-utility-l1-1-0.dll"/>
+	                        </Component>
+	                        <Component Id="_8b65846e_2f90_4118_82bf_2c723e83690b" Guid="ab6e682f-0d13-47c6-8b6e-eee1ebabf3ec" Win64="yes">
+	                            <File Id="_0ccd1729_e9b7_496a_b8c4_4aca237a9208" Name="awt.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\awt.dll"/>
+	                        </Component>
+	                        <Directory Id="_38d33402_5fcf_48c7_84a7_6ad11ea8172a" Name="client">
+	                            <Component Id="_ee6eea9c_cdb1_4403_a80e_6a82fdfc03b6" Guid="2e65526c-7ef5-446a-b705-7fb3dc6c949b" Win64="yes">
+	                                <File Id="_4ee1e174_e1a4_4d00_a24b_a5292f129731" Name="jvm.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\client\jvm.dll"/>
+	                            </Component>
+	                        </Directory>
+	                        <Component Id="_05e2922c_9ef3_4350_96dc_a0bfc7e3ebd0" Guid="13ab6494-2186-4c9e-b313-460503e1b7e2" Win64="yes">
+	                            <File Id="_c5322ae1_f249_4f1d_90b8_097275754671" Name="fontmanager.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\fontmanager.dll"/>
+	                        </Component>
+	                        <Component Id="_73580a99_df95_49a0_9bd7_0bee35cd75bd" Guid="feb04847-f4cf-4138-b86b-c55e158d77d2" Win64="yes">
+	                            <File Id="_9ab4e572_a1aa_4e5d_8cfb_bf1031352d21" Name="freetype.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\freetype.dll"/>
+	                        </Component>
+	                        <Component Id="_16a8040a_eaa2_42ba_975f_f716594a9da7" Guid="848cfedd-2f6f-422b-9684-c50eee121a04" Win64="yes">
+	                            <File Id="_f685cdc0_abc4_4a9e_a8cc_e8aebd43313c" Name="java.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\java.dll"/>
+	                        </Component>
+	                        <Component Id="_fefe844c_ae7b_4509_8231_1c1417f66ecb" Guid="75f7bd82-dd57-4bf5-9f90-8db0a0871701" Win64="yes">
+	                            <File Id="_f5db1b80_40f1_4e6a_bc5c_42effd9012d7" Name="java.exe" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\java.exe"/>
+	                        </Component>
+	                        <Component Id="_3d83f36c_6f41_4f36_8088_1404adaff6bb" Guid="f5230aca-dcfb-4c72-8f3c-5b9c23e22ca8" Win64="yes">
+	                            <File Id="_6ebf3471_7738_4d2b_983a_0eaa8f2595b8" Name="javajpeg.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\javajpeg.dll"/>
+	                        </Component>
+	                        <Component Id="_5523ec45_b976_4ab8_8a55_a0f16e26aa4f" Guid="0f91b4c1-a586-429c-a6bc-ecbcd574812f" Win64="yes">
+	                            <File Id="_7bdfe417_ab00_45f3_94ae_fa11faba37f9" Name="javaw.exe" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\javaw.exe"/>
+	                        </Component>
+	                        <Component Id="_6fecf1c5_4e51_429c_a938_a5079dcfd44f" Guid="e0ebccb2-ddc1-45c3-8ee1-02887d710894" Win64="yes">
+	                            <File Id="_e71822b2_9341_4983_b5b6_1237f4746d15" Name="jawt.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\jawt.dll"/>
+	                        </Component>
+	                        <Component Id="_9ea59d87_a578_4c63_acc8_abfe90251420" Guid="423852e5-4cd2-4dbd-a5d5-5861047d3764" Win64="yes">
+	                            <File Id="_c594d7b2_4967_4e44_b8ba_f6aff737b120" Name="jimage.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\jimage.dll"/>
+	                        </Component>
+	                        <Component Id="_a3cfb8a0_4f5b_4a35_86a4_234252988aba" Guid="fa442712-b2a2-4690-afb8-d21fb0049569" Win64="yes">
+	                            <File Id="_4ebc3727_933b_4068_b16e_a3994029f4a3" Name="jli.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\jli.dll"/>
+	                        </Component>
+	                        <Component Id="_9d99afe6_e0a0_49cc_b876_2bf9aa975415" Guid="c7d4a41b-59ee-48fe-9d70-3e8c9e18d24a" Win64="yes">
+	                            <File Id="_39e9703a_ac16_4d12_8c43_e33e0347cc30" Name="jsound.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\jsound.dll"/>
+	                        </Component>
+	                        <Component Id="_b9687578_31cc_47e8_8237_31f6f572f847" Guid="830f7219-bf1d-41c5-808f-06312be8d92b" Win64="yes">
+	                            <File Id="_9a1f5db8_ba06_4992_9132_b1046885df5f" Name="keytool.exe" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\keytool.exe"/>
+	                        </Component>
+	                        <Component Id="_2fa77e46_cc95_4b02_a1a1_d3fd4e3d503b" Guid="6eeacea4-16a5-4a5a-9444-76f5a8fefead" Win64="yes">
+	                            <File Id="_392fec27_ec8a_471a_97c0_ad3f378b993e" Name="lcms.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\lcms.dll"/>
+	                        </Component>
+	                        <Component Id="_0fb71f9e_6019_4ada_8c6c_bab611918882" Guid="c539628c-8a54-431f-ae22-ed2824d7ba58" Win64="yes">
+	                            <File Id="_f98f3c66_3186_4d78_afda_21ce8459d0cf" Name="mlib_image.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\mlib_image.dll"/>
+	                        </Component>
+	                        <Component Id="_8730fe4f_a527_4dac_a151_5fed5731b201" Guid="a3bc67ba-36aa-498a-823b-a0529c5d24c5" Win64="yes">
+	                            <File Id="_24da1301_e230_432c_afea_f2e57b0bb612" Name="msvcp140.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\msvcp140.dll"/>
+	                        </Component>
+	                        <Component Id="_9eec767e_e562_4ec4_8756_199e30229187" Guid="645de6d1-376e-4691-90e8-2fe3ecb205ab" Win64="yes">
+	                            <File Id="_de28383f_91ed_4d64_979a_102796ba8c6f" Name="net.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\net.dll"/>
+	                        </Component>
+	                        <Component Id="_07636a4e_91cf_439c_a682_2984116ec2cd" Guid="86b686bf-721e-4c5f-aeff-546d58c74f7b" Win64="yes">
+	                            <File Id="_e23a62b8_4b08_4d42_b134_1ee403a4a17c" Name="nio.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\nio.dll"/>
+	                        </Component>
+	                        <Component Id="_90209131_24e2_4492_9b24_6da26e3af974" Guid="d3ecdc2b-1cde-4a78-96d7-432eadb7d9f5" Win64="yes">
+	                            <File Id="_11a6adbc_134f_4861_8375_d7594c44186d" Name="prefs.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\prefs.dll"/>
+	                        </Component>
+	                        <Directory Id="_cbf6eb83_b159_4027_a602_2636d5d7ce63" Name="server">
+	                            <Component Id="_521be470_b111_451e_92f6_afae3460b04b" Guid="2bba52fe-0d60-4287-8474-c2459864ef69" Win64="yes">
+	                                <File Id="_823ba307_e397_42b1_bcec_f0a6bdd5e150" Name="jvm.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\server\jvm.dll"/>
+	                            </Component>
+	                        </Directory>
+	                        <Component Id="_7aec48ff_58fb_45b1_8575_123b9eb462a9" Guid="b0c29493-edbd-462d-84ef-9b07a51eccd9" Win64="yes">
+	                            <File Id="_382fa4c5_8729_4d6f_9d79_5e5e86885e33" Name="splashscreen.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\splashscreen.dll"/>
+	                        </Component>
+	                        <Component Id="_d8286292_09ff_489d_a308_5f31bd19fa43" Guid="fec65ee4-0c76-42b9-b864-5b87d0b3d296" Win64="yes">
+	                            <File Id="_8d780b52_4c0d_4ce1_87a4_dd76f5824eaa" Name="ucrtbase.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\ucrtbase.dll"/>
+	                        </Component>
+	                        <Component Id="_b97afc4e_47c4_4dbf_83d6_ed3245736ebd" Guid="2255a505-1cf3-4b59-8d88-1506d4a2f232" Win64="yes">
+	                            <File Id="_8630b13d_6f29_4199_86dd_cfd19461bc6b" Name="vcruntime140.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\vcruntime140.dll"/>
+	                        </Component>
+	                        <Component Id="_e3147339_c229_4d0f_9572_6eb8c3d1b54a" Guid="3f42f431-21ae-4a0e-b1fe-1b0edc460260" Win64="yes">
+	                            <File Id="_035a4fa7_88eb_4a85_afe6_404df552f993" Name="verify.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\verify.dll"/>
+	                        </Component>
+	                        <Component Id="_55847f82_e92e_4adb_acc8_0f7eb8324054" Guid="f9143c38-9fda-483d-a7fc-8f1c9324bbe4" Win64="yes">
+	                            <File Id="_e8838d6b_cc34_42c6_b494_9b66df38f03e" Name="zip.dll" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\bin\zip.dll"/>
+	                        </Component>
+	                    </Directory>
+	                    <Directory Id="_2d11d437_c004_4459_901f_57637d45f403" Name="conf">
+	                        <Component Id="_3acd8cc8_117a_43ab_b186_8252dd4920c8" Guid="5c114010-5dad-4e88-84ee-6835d7b057e4" Win64="yes">
+	                            <File Id="_0b83cae0_4a14_4f40_9c5b_b5ad6b954372" Name="net.properties" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\net.properties"/>
+	                        </Component>
+	                        <Directory Id="_36cb28c2_5434_43e5_a88e_851b9b25d46e" Name="security">
+	                            <Component Id="_c132a844_defb_43b8_9aa0_241c11575c99" Guid="1b304111-d7f1-4afd-8ff0-83c974ad3e37" Win64="yes">
+	                                <File Id="_a8bd1c40_b73e_4fbe_a96d_c04bc427c7aa" Name="java.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\java.policy"/>
+	                            </Component>
+	                            <Component Id="_045c43a8_7032_4565_9f2e_09dccb360261" Guid="27a8f7f9-04f6-44d0-abbf-f476b41e804b" Win64="yes">
+	                                <File Id="_431ef779_2eeb_4666_aba0_5417bc84c6af" Name="java.security" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\java.security"/>
+	                            </Component>
+	                            <Directory Id="_fe60d599_a6a9_4f54_8f7d_a3127efbfe3e" Name="policy">
+	                                <Directory Id="_b4a2828e_be62_4b4e_8059_6c96b8ed4d9c" Name="limited">
+	                                    <Component Id="_7441f006_fac2_4892_a780_29f17e5369df" Guid="1e34035e-b0cf-49b0-8de2-172d2e8d3c1c" Win64="yes">
+	                                        <File Id="_299eaba8_2354_4325_a491_d79b06009714" Name="default_local.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\limited\default_local.policy"/>
+	                                    </Component>
+	                                    <Component Id="_10368382_9251_40f5_a2f3_43102ae46fb9" Guid="a6d4ca67-0710-4546-9eff-dee08db07bb0" Win64="yes">
+	                                        <File Id="_3e088398_586e_48b0_9afb_e35d4f171be5" Name="default_US_export.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\limited\default_US_export.policy"/>
+	                                    </Component>
+	                                    <Component Id="_d5b1bb7c_c465_4c99_823d_c5ffd953770f" Guid="2f15307f-0186-4464-ae70-25fee2c835d4" Win64="yes">
+	                                        <File Id="_b6c7de96_dedd_447b_95b8_99ad9f222eaa" Name="exempt_local.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\limited\exempt_local.policy"/>
+	                                    </Component>
+	                                </Directory>
+	                                <Component Id="_75e72293_cd7d_4b9f_92e8_128808d76292" Guid="928b8b13-ce19-4104-bb76-8b4264339f2f" Win64="yes">
+	                                    <File Id="_99ff7882_ee6d_4195_88ea_8f284e5591a0" Name="README.txt" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\README.txt"/>
+	                                </Component>
+	                                <Directory Id="_2afa7571_043d_478a_87e4_6d9359b1d62c" Name="unlimited">
+	                                    <Component Id="_8c72e926_7c20_4870_8e9e_e43f24eae492" Guid="0f04aa92-c1ee-49fd-adf6-40a196a23430" Win64="yes">
+	                                        <File Id="_acc503a1_c9e6_4a72_b679_7fd104cb640e" Name="default_local.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\unlimited\default_local.policy"/>
+	                                    </Component>
+	                                    <Component Id="_e5b23bfd_524d_4050_87bb_941fbd99526e" Guid="f4a16d22-2a01-43af-a9da-604d04faab0b" Win64="yes">
+	                                        <File Id="_a78fa65d_3c78_45b1_9270_ce8756c63171" Name="default_US_export.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\security\policy\unlimited\default_US_export.policy"/>
+	                                    </Component>
+	                                </Directory>
+	                            </Directory>
+	                        </Directory>
+	                        <Component Id="_8b99f396_0688_4493_867f_445746df74b8" Guid="f60be202-9d56-4e96-a6df-96671a3fe9e8" Win64="yes">
+	                            <File Id="_efafbe03_c596_49f8_ac31_3f1b8ce6720d" Name="sound.properties" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\conf\sound.properties"/>
+	                        </Component>
+	                    </Directory>
+	                    <Directory Id="_17bd1013_7d2f_4e2d_a9d5_5ff2ec493557" Name="lib">
+	                        <Component Id="_92fb42c4_38e6_4180_be83_b7bbc10f2455" Guid="349547e5-0022-4bec-b979-1db0942c663b" Win64="yes">
+	                            <File Id="_005bb859_6619_4886_a8df_4341a84cf8db" Name="classlist" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\classlist"/>
+	                        </Component>
+	                        <Component Id="_b80adf74_4855_4cc3_b318_2d997f7cd01d" Guid="77302900-6b5d-470c-9e29-9613c0daf98a" Win64="yes">
+	                            <File Id="_bdeeeb21_a665_4959_828f_a8c1661c72ee" Name="fontconfig.bfc" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\fontconfig.bfc"/>
+	                        </Component>
+	                        <Component Id="_754da512_04c8_4f8e_9283_ed23064451e4" Guid="cf844263-6f13-4851-82e3-ab044c57762b" Win64="yes">
+	                            <File Id="_4337e469_7b8f_481a_b32a_1b42ac0c752f" Name="fontconfig.properties.src" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\fontconfig.properties.src"/>
+	                        </Component>
+	                        <Component Id="_a365c31f_bb7d_4a42_a48f_39198a38a960" Guid="b632d280-ca12-4137-99bb-bdda82e48023" Win64="yes">
+	                            <File Id="_1eb0db72_58b7_41a8_a75c_3793a371c8b8" Name="jawt.lib" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\jawt.lib"/>
+	                        </Component>
+	                        <Component Id="_ab465c12_2506_4cba_829e_50109c04d7da" Guid="8ffa81b9-e424-4469-bd61-39f5518ac10b" Win64="yes">
+	                            <File Id="_985e8146_ad58_48f5_b2ec_acbd92707854" Name="jrt-fs.jar" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\jrt-fs.jar"/>
+	                        </Component>
+	                        <Component Id="_ac5ab10e_7720_4f5a_bf64_c5b07f5a2aa8" Guid="2d7d00f3-cd4c-4869-b4a3-1c2ae898a1be" Win64="yes">
+	                            <File Id="_3496929f_26e8_42a0_aba1_2425810ea30c" Name="jvm.cfg" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\jvm.cfg"/>
+	                        </Component>
+	                        <Component Id="_c6343c11_7a73_484d_85a8_bc9637ab0abb" Guid="4d04bd67-90a1-4f56-a7b7-a11cdc247818" Win64="yes">
+	                            <File Id="_e616ba73_2559_4be4_ae28_d9beaf8e991a" Name="jvm.lib" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\jvm.lib"/>
+	                        </Component>
+	                        <Component Id="_1786622b_367c_426f_ab7c_eb38d2c76aa2" Guid="63cb0821-15ef-4b9a-97b0-4d2b758ac520" Win64="yes">
+	                            <File Id="_9a7e7311_2630_4231_b35c_21d492827e53" Name="modules" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\modules"/>
+	                        </Component>
+	                        <Component Id="_88732593_682d_4e2c_8944_df3ddbb7652e" Guid="dd5a1371-ade5-4fa8-8e5f-876c313ac35c" Win64="yes">
+	                            <File Id="_656a956e_763e_46e2_a571_e955268194e4" Name="psfont.properties.ja" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\psfont.properties.ja"/>
+	                        </Component>
+	                        <Component Id="_e7c7474e_6722_49d0_8919_a9e5e014f991" Guid="a56cf4b4-bf88-4365-975d-0fd398f7fb77" Win64="yes">
+	                            <File Id="_ccaba694_994e_440f_a763_e24e5a0b50df" Name="psfontj2d.properties" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\psfontj2d.properties"/>
+	                        </Component>
+	                        <Directory Id="_dfc8f2f7_905e_481b_8ae8_2bf9ba9fb46b" Name="security">
+	                            <Component Id="_26b5c0b9_e681_44f1_af58_19b0b1f72f1d" Guid="2e12a6c2-0830-4df7-bca1-53336e1955a4" Win64="yes">
+	                                <File Id="_c025bcb1_6f2c_4e69_878d_d5be27c6f01e" Name="blacklisted.certs" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\security\blacklisted.certs"/>
+	                            </Component>
+	                            <Component Id="_eca124a7_f4bc_4035_8c57_997309ba761b" Guid="8a35013f-7b80-481b-a30a-cb8dea834d37" Win64="yes">
+	                                <File Id="_cc76060e_2f4c_4647_a32c_0d81ab951e94" Name="cacerts" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\security\cacerts"/>
+	                            </Component>
+	                            <Component Id="_4e21ce59_df3c_4d03_8275_105664a667ac" Guid="48d4d84c-9d97-4957-aea1-f53eb52e9866" Win64="yes">
+	                                <File Id="_d9b1de74_904c_4699_8ec3_f87ea99227f4" Name="default.policy" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\security\default.policy"/>
+	                            </Component>
+	                            <Component Id="_81a62ab2_643b_45ac_88d4_89935e6b2c66" Guid="dc4ce839-269b-47b5-baf2-41342f69c9b8" Win64="yes">
+	                                <File Id="_79031a22_981d_4664_b542_7c3ff9b1fdc3" Name="public_suffix_list.dat" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\security\public_suffix_list.dat"/>
+	                            </Component>
+	                        </Directory>
+	                        <Component Id="_854101a1_0c69_48e7_b44e_902953926e16" Guid="66b4bc7e-66f5-4fb4-9681-dc300be65dfa" Win64="yes">
+	                            <File Id="_1af530c3_6c32_4ef9_a73f_f64f3696b200" Name="tzdb.dat" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\tzdb.dat"/>
+	                        </Component>
+	                        <Component Id="_b9913bb3_6872_4ec3_a33e_f6039c68f438" Guid="78342a96-9a4e-42de-9e05-d4b5789bf418" Win64="yes">
+	                            <File Id="_fcb72c51_9484_4af9_8021_47b50aa926d8" Name="tzmappings" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\lib\tzmappings"/>
+	                        </Component>
+	                    </Directory>
+	                    <Component Id="_382f16ea_65d7_48e5_b4d4_aea2197a65ff" Guid="e835e799-a8bf-421b-944c-72821469c14c" Win64="yes">
+	                        <File Id="_cf305780_87b0_4bb2_9dbd_f39120cf5de8" Name="release" KeyPath="yes" DiskId="1" Source="target\HelloWorld\jre\release"/>
+	                    </Component>
+	                </Directory>
+	                <Directory Id="_9999719e_bdc4_4ab9_be8b_fcbe080bc427" Name="libs">
+	                    <Component Id="_5d084a24_c325_45c1_9d86_8052d0c0b3d3" Guid="b7e92e6f-baeb-4ff0-a143-6e2933e4486b" Win64="yes">
+	                        <File Id="_9799521c_9e0c_4399_a85b_b968e594158c" Name="commons-io-2.6.jar" KeyPath="yes" DiskId="1" Source="target\HelloWorld\libs\commons-io-2.6.jar"/>
+	                    </Component>
+	                </Directory>
+	                <Component Id="_298a5bc2_fb07_4681_b7b0_8ac01e54b46b" Guid="24dfef19-32da-45d0-87b6-0b113d3a6aa8" Win64="yes">
+	                    <File Id="_272d477e_aa0e_420d_b0d1_f2f8ee8af40e" Name="LICENSE" KeyPath="yes" DiskId="1" Source="target\HelloWorld\LICENSE"/>
+	                </Component>
+	            </Directory>
+            </Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="HelloWorld">
+					<Component Id="ApplicationShortcut" Guid="7afc8aed-902e-4975-bce3-50017f4ab03f">
+						<Shortcut Id="ApplicationStartMenuShortcut"
+							Name="HelloWorld" Description="Hellooooowwww worldddd"
+							Target="[#_3f65ca8c_2d29_4464_8297_df636915bf63]"
+							WorkingDirectory="INSTALLDIR" />
+						<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+						<RegistryValue Root="HKCU" Key="Software\ACME\HelloWorld" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+					</Component>
+				</Directory>
+			</Directory>
+        </Directory>
+        <Feature Id="_6a64d089_2f66_4fee_aa9f_fa5028949873" Absent="disallow" AllowAdvertise="no" ConfigurableDirectory="INSTALLDIR" Description="Hello world application" Level="1" Title="Hello World">
+            <ComponentRef Id="_37de1418_8abe_42d3_9209_dbf017c115b8"/>
+            <ComponentRef Id="_fe195234_c052_4ad9_8158_a6bb1fbdf583"/>
+            <ComponentRef Id="_663dd283_05be_4506_996c_6edef4173176"/>
+            <ComponentRef Id="_96451815_9278_4351_bb57_0fe5aceb8e03"/>
+            <ComponentRef Id="_ef6850a6_bd7b_4657_b050_7f6d6c1cfeeb"/>
+            <ComponentRef Id="_f3a902a4_4222_41de_9aa1_d6e2f9cbb83a"/>
+            <ComponentRef Id="_634021e6_7239_47e1_896a_5af9a75755a3"/>
+            <ComponentRef Id="_bffa80cd_16ca_49a4_a6af_9ac55be08853"/>
+            <ComponentRef Id="_cf813bde_b552_4483_8cca_110de0f6317b"/>
+            <ComponentRef Id="_4c89e131_4001_4df8_aa78_acb0116a7727"/>
+            <ComponentRef Id="_3e7f2ce8_a899_4e7d_86fb_74eb930212e5"/>
+            <ComponentRef Id="_51a24a62_21ca_4b5f_b4c5_56281084b932"/>
+            <ComponentRef Id="_3ea898ab_617e_41b6_9426_cca8958fe2fc"/>
+            <ComponentRef Id="_d0117d1f_6c47_4187_b27a_98f009ffba56"/>
+            <ComponentRef Id="_b831ac41_79ea_41cf_998b_78f62807783f"/>
+            <ComponentRef Id="_bd02efd5_0ce7_4442_bb84_f92b8763b573"/>
+            <ComponentRef Id="_e88f3b5f_17c7_4799_b021_fc32daa63b86"/>
+            <ComponentRef Id="_75beccbd_e201_4989_b5af_801ce5d64816"/>
+            <ComponentRef Id="_8730cb79_49ff_41dd_8ccb_b6ba995d4738"/>
+            <ComponentRef Id="_508be8af_a453_4d6b_a677_644aaf242a5b"/>
+            <ComponentRef Id="_5e534d54_334f_43a3_b9b4_9bce6be6b0a7"/>
+            <ComponentRef Id="_e04d55e0_576c_4f13_b2b3_d166bd3bd784"/>
+            <ComponentRef Id="_ec695fbc_dd51_43b9_97b3_e7c0691b5092"/>
+            <ComponentRef Id="_fed36eb7_58a6_4852_84ed_dd01895b262e"/>
+            <ComponentRef Id="_6d2b2baa_1dc7_4b10_9802_8966823c1d81"/>
+            <ComponentRef Id="_294457bf_7d65_451d_8bfd_a100fe3c8496"/>
+            <ComponentRef Id="_adeea845_097a_43ba_812b_0c2a2eb969b0"/>
+            <ComponentRef Id="_2d44c0b8_c7b8_4872_8f33_7eaa2fcf91dd"/>
+            <ComponentRef Id="_1668dece_752a_4ace_a311_257e9f409471"/>
+            <ComponentRef Id="_04349d6b_48a5_4740_83f6_d64e9e77b8ae"/>
+            <ComponentRef Id="_3fbb80e3_e2be_429b_b064_c7e26d862880"/>
+            <ComponentRef Id="_01ffe5f6_c955_4371_b3cb_35d413febe7e"/>
+            <ComponentRef Id="_9bbd24f9_6f1d_4995_88b1_b0392b09c5e5"/>
+            <ComponentRef Id="_64330033_7792_407a_a9d2_7a77e2fa2c15"/>
+            <ComponentRef Id="_84fed595_3b6b_4b14_b3d2_7c7a1ba224df"/>
+            <ComponentRef Id="_52f2929a_e9fc_4e03_97ea_811fe9d1b06b"/>
+            <ComponentRef Id="_b6fc80c9_902a_404a_a5af_32333eecb691"/>
+            <ComponentRef Id="_6d651073_9ea7_474d_a9da_fb2e8b3a90b3"/>
+            <ComponentRef Id="_bc1b950a_c147_4c71_be14_60d56285ef2f"/>
+            <ComponentRef Id="_76338d89_b5f8_4cd4_b1a7_0500484af32e"/>
+            <ComponentRef Id="_7774d2c4_1d9e_4126_9715_029ce0afe789"/>
+            <ComponentRef Id="_183c14a7_914c_4516_b619_7f69d3e61512"/>
+            <ComponentRef Id="_5f58b826_e553_4d51_abfd_3ca26141deac"/>
+            <ComponentRef Id="_8b65846e_2f90_4118_82bf_2c723e83690b"/>
+            <ComponentRef Id="_ee6eea9c_cdb1_4403_a80e_6a82fdfc03b6"/>
+            <ComponentRef Id="_05e2922c_9ef3_4350_96dc_a0bfc7e3ebd0"/>
+            <ComponentRef Id="_73580a99_df95_49a0_9bd7_0bee35cd75bd"/>
+            <ComponentRef Id="_16a8040a_eaa2_42ba_975f_f716594a9da7"/>
+            <ComponentRef Id="_fefe844c_ae7b_4509_8231_1c1417f66ecb"/>
+            <ComponentRef Id="_3d83f36c_6f41_4f36_8088_1404adaff6bb"/>
+            <ComponentRef Id="_5523ec45_b976_4ab8_8a55_a0f16e26aa4f"/>
+            <ComponentRef Id="_6fecf1c5_4e51_429c_a938_a5079dcfd44f"/>
+            <ComponentRef Id="_9ea59d87_a578_4c63_acc8_abfe90251420"/>
+            <ComponentRef Id="_a3cfb8a0_4f5b_4a35_86a4_234252988aba"/>
+            <ComponentRef Id="_9d99afe6_e0a0_49cc_b876_2bf9aa975415"/>
+            <ComponentRef Id="_b9687578_31cc_47e8_8237_31f6f572f847"/>
+            <ComponentRef Id="_2fa77e46_cc95_4b02_a1a1_d3fd4e3d503b"/>
+            <ComponentRef Id="_0fb71f9e_6019_4ada_8c6c_bab611918882"/>
+            <ComponentRef Id="_8730fe4f_a527_4dac_a151_5fed5731b201"/>
+            <ComponentRef Id="_9eec767e_e562_4ec4_8756_199e30229187"/>
+            <ComponentRef Id="_07636a4e_91cf_439c_a682_2984116ec2cd"/>
+            <ComponentRef Id="_90209131_24e2_4492_9b24_6da26e3af974"/>
+            <ComponentRef Id="_521be470_b111_451e_92f6_afae3460b04b"/>
+            <ComponentRef Id="_7aec48ff_58fb_45b1_8575_123b9eb462a9"/>
+            <ComponentRef Id="_d8286292_09ff_489d_a308_5f31bd19fa43"/>
+            <ComponentRef Id="_b97afc4e_47c4_4dbf_83d6_ed3245736ebd"/>
+            <ComponentRef Id="_e3147339_c229_4d0f_9572_6eb8c3d1b54a"/>
+            <ComponentRef Id="_55847f82_e92e_4adb_acc8_0f7eb8324054"/>
+            <ComponentRef Id="_3acd8cc8_117a_43ab_b186_8252dd4920c8"/>
+            <ComponentRef Id="_c132a844_defb_43b8_9aa0_241c11575c99"/>
+            <ComponentRef Id="_045c43a8_7032_4565_9f2e_09dccb360261"/>
+            <ComponentRef Id="_7441f006_fac2_4892_a780_29f17e5369df"/>
+            <ComponentRef Id="_10368382_9251_40f5_a2f3_43102ae46fb9"/>
+            <ComponentRef Id="_d5b1bb7c_c465_4c99_823d_c5ffd953770f"/>
+            <ComponentRef Id="_75e72293_cd7d_4b9f_92e8_128808d76292"/>
+            <ComponentRef Id="_8c72e926_7c20_4870_8e9e_e43f24eae492"/>
+            <ComponentRef Id="_e5b23bfd_524d_4050_87bb_941fbd99526e"/>
+            <ComponentRef Id="_8b99f396_0688_4493_867f_445746df74b8"/>
+            <ComponentRef Id="_92fb42c4_38e6_4180_be83_b7bbc10f2455"/>
+            <ComponentRef Id="_b80adf74_4855_4cc3_b318_2d997f7cd01d"/>
+            <ComponentRef Id="_754da512_04c8_4f8e_9283_ed23064451e4"/>
+            <ComponentRef Id="_a365c31f_bb7d_4a42_a48f_39198a38a960"/>
+            <ComponentRef Id="_ab465c12_2506_4cba_829e_50109c04d7da"/>
+            <ComponentRef Id="_ac5ab10e_7720_4f5a_bf64_c5b07f5a2aa8"/>
+            <ComponentRef Id="_c6343c11_7a73_484d_85a8_bc9637ab0abb"/>
+            <ComponentRef Id="_1786622b_367c_426f_ab7c_eb38d2c76aa2"/>
+            <ComponentRef Id="_88732593_682d_4e2c_8944_df3ddbb7652e"/>
+            <ComponentRef Id="_e7c7474e_6722_49d0_8919_a9e5e014f991"/>
+            <ComponentRef Id="_26b5c0b9_e681_44f1_af58_19b0b1f72f1d"/>
+            <ComponentRef Id="_eca124a7_f4bc_4035_8c57_997309ba761b"/>
+            <ComponentRef Id="_4e21ce59_df3c_4d03_8275_105664a667ac"/>
+            <ComponentRef Id="_81a62ab2_643b_45ac_88d4_89935e6b2c66"/>
+            <ComponentRef Id="_854101a1_0c69_48e7_b44e_902953926e16"/>
+            <ComponentRef Id="_b9913bb3_6872_4ec3_a33e_f6039c68f438"/>
+            <ComponentRef Id="_382f16ea_65d7_48e5_b4d4_aea2197a65ff"/>
+            <ComponentRef Id="_5d084a24_c325_45c1_9d86_8052d0c0b3d3"/>
+            <ComponentRef Id="_298a5bc2_fb07_4681_b7b0_8ac01e54b46b"/>
+            <ComponentRef Id="ApplicationShortcut"/>
+        </Feature>
+        <Icon Id="_4eef8e8c_cb0a_4886_ba54_418cc2e5a86c" SourceFile="assets/windows/HelloWorld.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="_4eef8e8c_cb0a_4886_ba54_418cc2e5a86c"/>
+        <WixVariable Id="WixUILicenseRtf" Value="LICENSE"/>
+        <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." IgnoreRemoveFailure="no"/>
+    </Product>
+</Wix>
