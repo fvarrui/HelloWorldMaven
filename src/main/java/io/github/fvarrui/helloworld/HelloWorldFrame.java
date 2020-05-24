@@ -31,6 +31,7 @@ public class HelloWorldFrame extends JFrame {
         getContentPane().add(new JLabel(content));
         getContentPane().add(new JLabel(info.getAbsolutePath()));
         getContentPane().add(new JLabel("PATH=" + System.getenv("PATH")));
+        getContentPane().add(new JLabel("JAVA_HOME=" + System.getenv("JAVA_HOME")));
 	}
 
 	public void initFrame() {
