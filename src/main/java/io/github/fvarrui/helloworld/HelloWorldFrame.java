@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,10 +37,11 @@ public class HelloWorldFrame extends JFrame {
         
 	}
 
-	public void initFrame() {
+	public void initFrame() throws IOException {
 		setSize(640, 200);
 		setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setIconImage(ImageIO.read(getClass().getResourceAsStream("/images/world.png")));
 	}
 	
 	public static void main(String[] args) {
