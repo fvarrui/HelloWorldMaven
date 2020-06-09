@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.0.0</version>
+				<version>1.0.1-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
