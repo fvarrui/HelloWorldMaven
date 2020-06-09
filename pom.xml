@@ -35,6 +35,7 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
+							<platform>mac</platform>
 							<bundleJre>true</bundleJre>
 							<generateInstaller>true</generateInstaller>
 							<additionalResources>
