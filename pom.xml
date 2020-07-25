@@ -49,7 +49,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.1.0</version>
+				<version>1.1.1-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -59,10 +59,9 @@
 						<configuration>
 							<platform>auto</platform>
 							<runnableJar>${project.build.directory}/HelloWorld-1.0.0-jar-with-dependencies.jar</runnableJar>
-							<bundleJre>false</bundleJre>
+							<bundleJre>true</bundleJre>
 							<copyDependencies>false</copyDependencies>
-							<generateInstaller>true</generateInstaller>
-							<administratorRequired>true</administratorRequired>
+							<generateInstaller>false</generateInstaller>
 							<additionalResources>
 								<additionalResource>info.txt</additionalResource>
 							</additionalResources>
