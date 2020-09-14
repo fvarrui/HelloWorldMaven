@@ -38,6 +38,7 @@
 					<createTarball>false</createTarball>
 				</configuration>
 				<executions>
+					<!--
 					<execution>
 						<id>package-for-mac</id>
 						<phase>package</phase>
@@ -60,6 +61,7 @@
 							<jdkPath>C:\Users\fvarrui\GitHub\jdks\adoptopenjdk\jdk-13.0.2+8-linux</jdkPath>
 						</configuration>
 					</execution>
+					-->
 					<execution>
 						<id>package-for-windows</id>
 						<phase>package</phase>
@@ -80,21 +82,6 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>com.cedarsoft.commons</groupId>
-			<artifactId>collections</artifactId>
-			<version>8.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>ai.djl.hadoop</groupId>
-			<artifactId>hadoop</artifactId>
-			<version>0.7.0</version>
 		</dependency>
 	</dependencies>
 
