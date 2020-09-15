@@ -33,12 +33,11 @@
 					<additionalResources>
 						<additionalResource>info.txt</additionalResource>
 					</additionalResources>
-					<generateInstaller>false</generateInstaller>
-					<createZipball>false</createZipball>
-					<createTarball>false</createTarball>
+					<generateInstaller>true</generateInstaller>
+					<createZipball>true</createZipball>
+					<createTarball>true</createTarball>
 				</configuration>
 				<executions>
-					<!--
 					<execution>
 						<id>package-for-mac</id>
 						<phase>package</phase>
@@ -47,7 +46,7 @@
 						</goals>
 						<configuration>
 							<platform>mac</platform>
-							<jdkPath>C:\Users\fvarrui\GitHub\jdks\adoptopenjdk\jdk-13.0.2+8-mac</jdkPath>
+							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-mac</jdkPath>
 						</configuration>
 					</execution>
 					<execution>
@@ -58,10 +57,9 @@
 						</goals>
 						<configuration>
 							<platform>linux</platform>
-							<jdkPath>C:\Users\fvarrui\GitHub\jdks\adoptopenjdk\jdk-13.0.2+8-linux</jdkPath>
+							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-linux</jdkPath>
 						</configuration>
 					</execution>
-					-->
 					<execution>
 						<id>package-for-windows</id>
 						<phase>package</phase>
