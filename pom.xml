@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.github.fvarrui</groupId>
-	<artifactId>HelloWorld</artifactId>
+	<artifactId>HelloWorldMaven</artifactId>
 	<version>1.0.0</version>
 
 	<properties>
@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>1.2.1-SNAPSHOT</version>
 				<configuration>
 					<bundleJre>true</bundleJre>
 					<additionalResources>
@@ -38,6 +38,7 @@
 					<createTarball>true</createTarball>
 				</configuration>
 				<executions>
+					<!-- 
 					<execution>
 						<id>package-for-mac</id>
 						<phase>package</phase>
@@ -46,7 +47,7 @@
 						</goals>
 						<configuration>
 							<platform>mac</platform>
-							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-mac</jdkPath>
+							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-mac/Contents/Home</jdkPath>
 						</configuration>
 					</execution>
 					<execution>
@@ -60,6 +61,7 @@
 							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-linux</jdkPath>
 						</configuration>
 					</execution>
+					 -->
 					<execution>
 						<id>package-for-windows</id>
 						<phase>package</phase>
@@ -68,6 +70,11 @@
 						</goals>
 						<configuration>
 							<platform>windows</platform>
+							<winConfig>
+								<generateMsm>false</generateMsm>
+								<generateSetup>false</generateSetup>
+								<generateMsi>true</generateMsi>
+							</winConfig>
 						</configuration>
 					</execution>
 				</executions>
