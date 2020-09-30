@@ -71,10 +71,9 @@
 						<configuration>
 							<platform>windows</platform>
 							<winConfig>
-								<headerType>console</headerType>
 								<generateMsm>false</generateMsm>
 								<generateSetup>false</generateSetup>
-								<generateMsi>false</generateMsi>
+								<generateMsi>true</generateMsi>
 							</winConfig>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
