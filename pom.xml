@@ -18,7 +18,7 @@
 	<licenses>
 		<license>
 			<name>GPL-v3.0</name>
-			<url>http://www.gnu.org/licenses/gpl-3.0.tx</url>
+			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
 		</license>
 	</licenses>
 
@@ -27,58 +27,27 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.2.1-SNAPSHOT</version>
+				<version>1.4.0-SNAPSHOT</version>
 				<configuration>
 					<bundleJre>true</bundleJre>
+					<copyDependencies>true</copyDependencies>
 					<additionalResources>
 						<additionalResource>info.txt</additionalResource>
+						<additionalResource>plugins</additionalResource>
 					</additionalResources>
-					<generateInstaller>true</generateInstaller>
-					<createZipball>true</createZipball>
-					<createTarball>true</createTarball>
+					<generateInstaller>false</generateInstaller>
+					<createZipball>false</createZipball>
+					<classpath>plugins</classpath>
+					<vmArgs>
+						<vmArg>-Dcustom.variable="Hi!"</vmArg>
+					</vmArgs>
 				</configuration>
 				<executions>
-					<!-- 
 					<execution>
-						<id>package-for-mac</id>
 						<phase>package</phase>
 						<goals>
 							<goal>package</goal>
 						</goals>
-						<configuration>
-							<platform>mac</platform>
-							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-mac/Contents/Home</jdkPath>
-						</configuration>
-					</execution>
-					<execution>
-						<id>package-for-linux</id>
-						<phase>package</phase>
-						<goals>
-							<goal>package</goal>
-						</goals>
-						<configuration>
-							<platform>linux</platform>
-							<jdkPath>C:/Program Files/AdoptOpenJDK/jdk-11.0.8+10-linux</jdkPath>
-						</configuration>
-					</execution>
-					 -->
-					<execution>
-						<id>package-for-windows</id>
-						<phase>package</phase>
-						<goals>
-							<goal>package</goal>
-						</goals>
-						<configuration>
-							<platform>windows</platform>
-							<winConfig>
-								<generateMsm>false</generateMsm>
-								<generateSetup>false</generateSetup>
-								<generateMsi>true</generateMsi>
-							</winConfig>
-							<vmArgs>
-								<vmArg>-Dcustom.variable="Hi!"</vmArg>
-							</vmArgs>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
