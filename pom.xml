@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.4.2-SNAPSHOT</version>
+				<version>1.5.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -35,16 +35,24 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<bundleJre>true</bundleJre>
+							<name>你好</name>
+							<bundleJre>false</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
-							<generateInstaller>false</generateInstaller>
+							<generateInstaller>true</generateInstaller>
 							<createZipball>false</createZipball>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 							</vmArgs>
+							<winConfig>
+								<signing>
+									<keystore>c:\Users\fvarrui\keystore.jks</keystore>
+									<storepass>123456</storepass>
+									<alias>fvarrui</alias>
+								</signing>
+							</winConfig>
 						</configuration>
 					</execution>
 				</executions>
