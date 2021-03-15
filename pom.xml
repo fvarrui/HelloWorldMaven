@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.5.1</version>
+				<version>1.6.0-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -35,8 +35,7 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<name>你好</name>
-							<bundleJre>false</bundleJre>
+							<bundleJre>true</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
@@ -46,12 +45,21 @@
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 							</vmArgs>
+							<additionalModulePaths>
+								<additionalModulePath>perico</additionalModulePath>
+							</additionalModulePaths>
 							<winConfig>
-								<signing>
-									<keystore>c:\Users\fvarrui\keystore.jks</keystore>
-									<storepass>123456</storepass>
-									<alias>fvarrui</alias>
-								</signing>
+								<generateMsi>false</generateMsi>
+								<registry>
+									<entries>
+										<entry>
+											<key>HKCU:MyApp</key>
+											<valueName>greeting</valueName>
+											<valueType>REG_SZ</valueType>
+											<valueData>hello</valueData>
+										</entry>
+									</entries>
+								</registry>
 							</winConfig>
 						</configuration>
 					</execution>
