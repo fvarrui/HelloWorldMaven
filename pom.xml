@@ -35,12 +35,8 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-<<<<<<< Updated upstream
-							<bundleJre>true</bundleJre>
-=======
 							<platform>linux</platform>
 							<bundleJre>false</bundleJre>
->>>>>>> Stashed changes
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
@@ -56,20 +52,7 @@
 								<additionalModulePath>perico</additionalModulePath>
 							</additionalModulePaths>
 							<winConfig>
-<<<<<<< Updated upstream
 								<generateMsi>false</generateMsi>
-								<registry>
-									<entries>
-										<entry>
-											<key>HKCU:MyApp</key>
-											<valueName>greeting</valueName>
-											<valueType>REG_SZ</valueType>
-											<valueData>hello</valueData>
-										</entry>
-									</entries>
-								</registry>
-=======
-								<exeCreationTool>winrun4j</exeCreationTool>
 								<!-- 
 								<signing>
 									<keystore>c:\Users\fvarrui\keystore.jks</keystore>
@@ -90,7 +73,6 @@
 								 	</entries>
 								 </registry>
 								 -->
->>>>>>> Stashed changes
 							</winConfig>
 						</configuration>
 					</execution>
