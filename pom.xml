@@ -41,38 +41,14 @@
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
-							<useResourcesAsWorkingDir>false</useResourcesAsWorkingDir>
 							<generateInstaller>false</generateInstaller>
 							<createZipball>false</createZipball>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
 							</vmArgs>
-							<additionalModulePaths>
-								<additionalModulePath>perico</additionalModulePath>
-							</additionalModulePaths>
 							<winConfig>
 								<generateMsi>false</generateMsi>
-								<!-- 
-								<signing>
-									<keystore>c:\Users\fvarrui\keystore.jks</keystore>
-									<storepass>123456</storepass>
-									<alias>fvarrui</alias>
-								</signing>
-								 -->
-								 <generateMsi>false</generateMsi>
-								 <!--
-								 <registry>
-								 	<entries>
-								 		<entry>
-								 			<key>HKCU:borrame</key>
-								 			<valueType>REG_SZ</valueType>
-								 			<valueName>saludo</valueName>
-								 			<valueData>hola</valueData>
-								 		</entry>
-								 	</entries>
-								 </registry>
-								 -->
 							</winConfig>
 						</configuration>
 					</execution>
