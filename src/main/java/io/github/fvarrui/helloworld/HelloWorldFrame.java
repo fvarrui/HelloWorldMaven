@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -16,6 +17,8 @@ import org.apache.commons.io.FileUtils;
 
 @SuppressWarnings("serial")
 public class HelloWorldFrame extends JFrame {
+	
+	private static String [] args;
 
 	public HelloWorldFrame() throws IOException {
 		super("Hello World");
@@ -41,7 +44,13 @@ public class HelloWorldFrame extends JFrame {
         StringBuffer buffer = new StringBuffer();
         buffer.append("Additional resource: " + info + "\n");
         buffer.append("Content: " + content + "\n\n");
-        
+
+        buffer.append("==============================================\n");
+        buffer.append("ARGUMENTS ====================================\n");
+        buffer.append("==============================================\n\n");
+        buffer.append("args=" + Arrays.asList(args) + "\n");        
+        buffer.append("\n");
+
         buffer.append("==============================================\n");
         buffer.append("ENVIRONMENT VARIABLES ========================\n");
         buffer.append("==============================================\n\n");
@@ -74,6 +83,7 @@ public class HelloWorldFrame extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
+                	HelloWorldFrame.args = args;
 					new HelloWorldFrame();
 				} catch (IOException e) {
 					e.printStackTrace();

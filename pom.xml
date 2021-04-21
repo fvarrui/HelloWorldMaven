@@ -35,20 +35,28 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>linux</platform>
-							<bundleJre>false</bundleJre>
+							<platform>auto</platform>
+							<bundleJre>true</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
-							<generateInstaller>false</generateInstaller>
+							<generateInstaller>true</generateInstaller>
 							<createZipball>false</createZipball>
+							<fileAssociations>
+								<fileAssociation>
+									<description>HelloWorld File</description>
+									<extension>hello</extension>
+									<mimeType>application/hello</mimeType>
+								</fileAssociation>
+							</fileAssociations>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
 							</vmArgs>
 							<winConfig>
 								<generateMsi>false</generateMsi>
+								<disableRunAfterInstall>false</disableRunAfterInstall>
 							</winConfig>
 						</configuration>
 					</execution>
@@ -61,6 +69,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
+
 			<version>2.6</version>
 		</dependency>
 	</dependencies>
