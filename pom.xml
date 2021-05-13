@@ -9,8 +9,8 @@
 	<version>1.0.0</version>
 
 	<properties>
-		<maven.compiler.target>8</maven.compiler.target>
-		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<exec.mainClass>io.github.fvarrui.helloworld.Main</exec.mainClass>
 	</properties>
@@ -22,12 +22,21 @@
 		</license>
 	</licenses>
 
+	<dependencies>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+	</dependencies>
+
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.6.0-SNAPSHOT</version>
+				<version>1.5.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -35,8 +44,8 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>linux</platform>
-							<bundleJre>false</bundleJre>
+							<platform>auto</platform>
+							<bundleJre>true</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
@@ -48,31 +57,17 @@
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
 							</vmArgs>
-							<additionalModulePaths>
-								<additionalModulePath>perico</additionalModulePath>
-							</additionalModulePaths>
+							<!-- <fileAssociations> <fileAssociation> <description>HelloWorld 
+								File</description> <extension>hello</extension> <mimeType>application/hello</mimeType> 
+								</fileAssociation> </fileAssociations> -->
 							<winConfig>
 								<generateMsi>false</generateMsi>
-								<!-- 
-								<signing>
-									<keystore>c:\Users\fvarrui\keystore.jks</keystore>
-									<storepass>123456</storepass>
-									<alias>fvarrui</alias>
-								</signing>
-								 -->
-								 <generateMsi>false</generateMsi>
-								 <!--
-								 <registry>
-								 	<entries>
-								 		<entry>
-								 			<key>HKCU:borrame</key>
-								 			<valueType>REG_SZ</valueType>
-								 			<valueName>saludo</valueName>
-								 			<valueData>hola</valueData>
-								 		</entry>
-								 	</entries>
-								 </registry>
-								 -->
+								<!-- <signing> <keystore>c:\Users\fvarrui\keystore.jks</keystore> 
+									<storepass>123456</storepass> <alias>fvarrui</alias> </signing> -->
+								<generateMsi>false</generateMsi>
+								<!-- <registry> <entries> <entry> <key>HKCU:borrame</key> <valueType>REG_SZ</valueType> 
+									<valueName>saludo</valueName> <valueData>hola</valueData> </entry> </entries> 
+									</registry> -->
 							</winConfig>
 						</configuration>
 					</execution>
@@ -80,13 +75,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
-		</dependency>
-	</dependencies>
-
+	
 </project>
