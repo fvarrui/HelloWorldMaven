@@ -36,7 +36,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.5.1</version>
+				<version>1.6.0-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -44,22 +44,25 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>auto</platform>
-							<bundleJre>true</bundleJre>
+							<platform>mac</platform>
+							<bundleJre>false</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
-							<useResourcesAsWorkingDir>false</useResourcesAsWorkingDir>
 							<generateInstaller>false</generateInstaller>
 							<createZipball>false</createZipball>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
 							</vmArgs>
-							<!-- <fileAssociations> <fileAssociation> <description>HelloWorld 
-								File</description> <extension>hello</extension> <mimeType>application/hello</mimeType> 
-								</fileAssociation> </fileAssociations> -->
+							<fileAssociations> 
+								<fileAssociation> 
+									<description>HelloWorld File</description> 
+									<extension>hello</extension> 
+									<mimeType>application/hello</mimeType> 
+								</fileAssociation> 
+							</fileAssociations>
 							<winConfig>
 								<generateMsi>false</generateMsi>
 								<!-- <signing> <keystore>c:\Users\fvarrui\keystore.jks</keystore> 
