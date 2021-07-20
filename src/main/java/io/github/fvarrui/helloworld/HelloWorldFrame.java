@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.desktop.OpenFilesEvent;
-import java.awt.desktop.OpenFilesHandler;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -24,8 +23,9 @@ import org.apache.commons.io.FileUtils;
 @SuppressWarnings("serial")
 public class HelloWorldFrame extends JFrame {
 
+	private static File openedFile;
 	private static String[] args;
-
+	
 	public HelloWorldFrame() throws IOException {
 		super("Hello World");
 		initFrame();
@@ -50,6 +50,8 @@ public class HelloWorldFrame extends JFrame {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Additional resource: " + info + "\n");
 		buffer.append("Content: " + content + "\n\n");
+
+		buffer.append("Opened file: " + openedFile + "\n\n");
 
 		buffer.append("==============================================\n");
 		buffer.append("ARGUMENTS ====================================\n");
@@ -89,7 +91,9 @@ public class HelloWorldFrame extends JFrame {
 
 	public static void main(String[] args) {
 
-		Desktop.getDesktop().setOpenFileHandler((OpenFilesEvent e) -> e.getFiles().stream().forEach(System.out::println));
+		Desktop.getDesktop().setOpenFileHandler((OpenFilesEvent e) -> e.getFiles().stream().forEach(f -> {
+			HelloWorldFrame.openedFile = f;
+		}));
 		
 		System.out.println("Starting app ... ");
 		System.out.println("PATH=" + System.getenv("PATH"));
