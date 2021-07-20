@@ -23,7 +23,6 @@ import org.apache.commons.io.FileUtils;
 @SuppressWarnings("serial")
 public class HelloWorldFrame extends JFrame {
 
-	private static File openedFile;
 	private static String[] args;
 	
 	public HelloWorldFrame() throws IOException {
@@ -50,8 +49,6 @@ public class HelloWorldFrame extends JFrame {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Additional resource: " + info + "\n");
 		buffer.append("Content: " + content + "\n\n");
-
-		buffer.append("Opened file: " + openedFile + "\n\n");
 
 		buffer.append("==============================================\n");
 		buffer.append("ARGUMENTS ====================================\n");
