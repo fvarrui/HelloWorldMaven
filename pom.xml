@@ -30,13 +30,12 @@
 		</dependency>
 	</dependencies>
 
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.6.0-SNAPSHOT</version>
+				<version>1.1.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -44,14 +43,15 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>mac</platform>
-							<bundleJre>false</bundleJre>
+							<platform>auto</platform>
+							<bundleJre>true</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
-							<generateInstaller>false</generateInstaller>
-							<createZipball>false</createZipball>
+							<generateInstaller>true</generateInstaller>
+							<createZipball>true</createZipball>
+							<createTarball>true</createTarball>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
@@ -63,15 +63,30 @@
 									<mimeType>application/hello</mimeType> 
 								</fileAssociation> 
 							</fileAssociations>
+							<!-- 
+							<linuxConfig>
+								<wrapJar>false</wrapJar>
+							</linuxConfig>
+							-->
+							<!-- 
 							<winConfig>
-								<generateMsi>false</generateMsi>
-								<!-- <signing> <keystore>c:\Users\fvarrui\keystore.jks</keystore> 
-									<storepass>123456</storepass> <alias>fvarrui</alias> </signing> -->
-								<generateMsi>false</generateMsi>
-								<!-- <registry> <entries> <entry> <key>HKCU:borrame</key> <valueType>REG_SZ</valueType> 
-									<valueName>saludo</valueName> <valueData>hola</valueData> </entry> </entries> 
-									</registry> -->
+								<signing> 
+										<keystore>c:\Users\fvarrui\keystore.jks</keystore> 
+										<storepass>123456</storepass>
+										<alias>fvarrui</alias>
+								</signing> 
+								<registry> 
+									<entries> 
+										<entry> 
+											<key>HKCU:borrame</key> 
+											<valueType>REG_SZ</valueType> 
+											<valueName>saludo</valueName>
+											<valueData>hola</valueData>
+										</entry>
+									</entries> 
+								</registry> 
 							</winConfig>
+							-->
 						</configuration>
 					</execution>
 				</executions>
