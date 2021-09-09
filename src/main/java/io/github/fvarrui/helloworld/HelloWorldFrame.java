@@ -89,11 +89,15 @@ public class HelloWorldFrame extends JFrame {
 	public static void main(String[] args) {
 
 		HelloWorldFrame.args = args;
-		if (System.getProperty("os.name").contains("OS X")) {
+		
+		if (System.getProperty("os.name").contains("OS X") &&
+			System.getProperty("java.version").compareTo("9") >= 0) {
+			
 			Desktop.getDesktop().setOpenFileHandler((OpenFilesEvent e) -> {
 				File f = e.getFiles().stream().findFirst().get();
 				HelloWorldFrame.args = new String[] { f.getAbsolutePath() };
 			});
+			
 		}
 		
 		System.out.println("Starting app ... ");
@@ -107,7 +111,7 @@ public class HelloWorldFrame extends JFrame {
 				}
 			}
 		});
-		
+				
 	}
 
 }
