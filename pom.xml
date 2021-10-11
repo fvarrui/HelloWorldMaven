@@ -28,6 +28,11 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.7</version>
 		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.7.13</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -35,7 +40,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.1.0</version>
+				<version>1.6.3-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -50,48 +55,51 @@
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
 							<generateInstaller>true</generateInstaller>
-							<createZipball>true</createZipball>
-							<createTarball>true</createTarball>
+							<createZipball>false</createZipball>
+							<createTarball>false</createTarball>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
 							</vmArgs>
-							<fileAssociations> 
-								<fileAssociation> 
-									<description>HelloWorld File</description> 
-									<extension>hello</extension> 
-									<mimeType>application/hello</mimeType> 
-								</fileAssociation> 
+							<fileAssociations>
+								<fileAssociation>
+									<description>HelloWorld File</description>
+									<extension>hello</extension>
+									<mimeType>application/hello</mimeType>
+								</fileAssociation>
 							</fileAssociations>
-							<!-- 
-							<linuxConfig>
-								<wrapJar>false</wrapJar>
-							</linuxConfig>
-							-->
-							<!-- 
+							<!-- <linuxConfig> <wrapJar>false</wrapJar> </linuxConfig> -->
 							<winConfig>
+								<generateMsi>false</generateMsi>
+								<generateMsm>false</generateMsm>
+								<disableWelcomePage>false</disableWelcomePage>
+								<setupLanguages>
+									<english>compiler:Default.isl,..\..\CustomMessages_en.isl</english>
+									<spanish>compiler:Languages\Spanish.isl,..\..\CustomMessages_es.isl</spanish>
+								</setupLanguages>
+								<!--  
 								<signing> 
-										<keystore>c:\Users\fvarrui\keystore.jks</keystore> 
-										<storepass>123456</storepass>
-										<alias>fvarrui</alias>
+									<keystore>c:\Users\fvarrui\keystore.jks</keystore> 
+									<storepass>123456</storepass> 
+									<alias>fvarrui</alias> 
 								</signing> 
 								<registry> 
 									<entries> 
 										<entry> 
 											<key>HKCU:borrame</key> 
 											<valueType>REG_SZ</valueType> 
-											<valueName>saludo</valueName>
-											<valueData>hola</valueData>
-										</entry>
+											<valueName>saludo</valueName> 
+											<valueData>hola</valueData> 
+										</entry> 
 									</entries> 
-								</registry> 
+								</registry>
+								--> 
 							</winConfig>
-							-->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
