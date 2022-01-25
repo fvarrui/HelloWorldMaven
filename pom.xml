@@ -28,11 +28,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.7</version>
 		</dependency>
-		<dependency>
-			<groupId>cn.hutool</groupId>
-			<artifactId>hutool-all</artifactId>
-			<version>5.7.13</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -57,6 +52,7 @@
 							<generateInstaller>true</generateInstaller>
 							<createZipball>false</createZipball>
 							<createTarball>false</createTarball>
+							<jrePath>C:\Users\fvarrui\Downloads\jdk8u312-b07-jre</jrePath>
 							<vmArgs>
 								<vmArg>-Dcustom.variable="Hi!"</vmArg>
 								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
@@ -70,13 +66,15 @@
 							</fileAssociations>
 							<!-- <linuxConfig> <wrapJar>false</wrapJar> </linuxConfig> -->
 							<winConfig>
+								<!-- <headerType>console</headerType> -->
 								<generateMsi>false</generateMsi>
 								<generateMsm>false</generateMsm>
 								<disableWelcomePage>false</disableWelcomePage>
 								<setupLanguages>
-									<english>compiler:Default.isl,..\..\CustomMessages_en.isl</english>
-									<spanish>compiler:Languages\Spanish.isl,..\..\CustomMessages_es.isl</spanish>
+									<english>compiler:Default.isl,${project.basedir}\CustomMessages_en.isl</english>
+									<spanish>compiler:Languages\Spanish.isl,${project.basedir}\CustomMessages_es.isl</spanish>
 								</setupLanguages>
+								<removeOldLibs>true</removeOldLibs>
 								<!--  
 								<signing> 
 									<keystore>c:\Users\fvarrui\keystore.jks</keystore> 
