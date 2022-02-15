@@ -4,6 +4,7 @@ version: 2.1
 
 orbs:
   win: circleci/windows@2.4.0
+  macos: circleci/macos@2.1.0
 
 jobs:
   build-linux:
@@ -21,12 +22,12 @@ jobs:
       xcode: 13.3.0
     steps:
       - run:
-          name: Fix - Finder got an error - AppleEvent timed out (-1712)
-          command: sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "select * from access"
-      - run:
           name: Install Maven
           command: brew install maven
       - checkout
+      - macos/add-permission:
+          bundle-id: com.apple.Terminal
+          permission-type: kTCCServiceAppleEvents
       - run:
           name: Build
           command: |
