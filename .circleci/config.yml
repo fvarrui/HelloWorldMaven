@@ -58,9 +58,9 @@ jobs:
           command: |
             mvn -v
             mvn -B -DskipTests clean package
-      - store-artifacts:
+      - store_artifacts:
           path: target/HelloWorldMaven_*.exe
-      - store-artifacts:
+      - store_artifacts:
           path: target/HelloWorldMaven_*.msi
 workflows:
   default:
