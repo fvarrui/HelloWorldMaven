@@ -21,6 +21,12 @@ jobs:
       xcode: 13.3.0
     steps:
       - run:
+          name: Enable Do-Not-Disturb feature
+          command: |
+            brew install node
+            npm install --global do-not-disturb-cli
+            do-not-disturb on
+      - run:
           name: Install Maven
           command: brew install maven
       - checkout
