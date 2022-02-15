@@ -45,7 +45,7 @@ jobs:
           command: |
             scoop bucket add java
             scoop bucket add extras
-            scoop install openjdk11
+            scoop install adoptopenjdk-openj9
             scoop install maven
             scoop install inno-setup
             scoop install wixtoolset
