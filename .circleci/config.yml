@@ -21,11 +21,8 @@ jobs:
       xcode: 13.3.0
     steps:
       - run:
-          name: Enable Do-Not-Disturb feature
-          command: |
-            brew install node
-            npm install --global do-not-disturb-cli
-            do-not-disturb on
+          name: Fix - Finder got an error - AppleEvent timed out (-1712)
+          command: sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "insert into access (service, client, client_type, allowed, prompt_count, indirect_object_identifier_type, indirect_object_identifier) values ('kTCCServiceAppleEvents', '$(which java)', 1, 1, 1, 0, 'com.apple.finder')"
       - run:
           name: Install Maven
           command: brew install maven
