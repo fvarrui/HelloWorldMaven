@@ -25,6 +25,7 @@ jobs:
           name: Install Maven
           command: brew install maven
       - checkout
+      - macos/add-uitest-permissions      
       - macos/add-permission:
           bundle-id: com.apple.Terminal
           permission-type: kTCCServiceAppleEvents
