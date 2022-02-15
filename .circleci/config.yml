@@ -22,7 +22,7 @@ jobs:
     steps:
       - run:
           name: Fix - Finder got an error - AppleEvent timed out (-1712)
-          command: sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "select sql from sqlite_master"
+          command: sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "select * from access"
       - run:
           name: Install Maven
           command: brew install maven
