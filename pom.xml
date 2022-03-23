@@ -13,13 +13,6 @@
 		<exec.mainClass>io.github.fvarrui.helloworld.Main</exec.mainClass>
 	</properties>
 
-	<licenses>
-		<license>
-			<name>GPL-v3.0</name>
-			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
-		</license>
-	</licenses>
-
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -33,7 +26,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.6.3</version>
+				<version>1.6.6-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -44,6 +37,38 @@
 							<platform>auto</platform>
 							<bundleJre>true</bundleJre>
 							<generateInstaller>true</generateInstaller>
+							<additionalResources>
+								<additionalResource>src/main/resources/info.txt</additionalResource>
+								<additionalResource>src/main/resources</additionalResource>
+							</additionalResources>
+							<vmArgs>
+								<vmArg>-Dcustom.variable="Hi!"</vmArg>
+								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
+							</vmArgs>
+							<fileAssociations>
+								<fileAssociation>
+									<description>HelloWorld File</description>
+									<extension>hello</extension>
+									<mimeType>application/hello</mimeType>
+								</fileAssociation>
+							</fileAssociations>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--
+			<plugin>
+				<groupId>io.github.fvarrui</groupId>
+				<artifactId>javapackager</artifactId>
+				<version>1.7.0-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>create-windows-app</goal>
+						</goals>
+						<configuration>
+							<bundleJre>true</bundleJre>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
@@ -62,6 +87,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
+			
 		</plugins>
 	</build>
 
