@@ -4,7 +4,7 @@
 
 	<groupId>io.github.fvarrui</groupId>
 	<artifactId>HelloWorldMaven</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -23,10 +23,38 @@
 
 	<build>
 		<plugins>
+
+			<!-- creates runnable fat jar: HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${exec.mainClass}</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- package the app using the runnable fat jar -->
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.6.6-SNAPSHOT</version>
+				<version>1.6.6</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -34,41 +62,14 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>auto</platform>
+							<platform>windows</platform>
 							<bundleJre>true</bundleJre>
-							<generateInstaller>true</generateInstaller>
-							<additionalResources>
-								<additionalResource>src/main/resources/info.txt</additionalResource>
-								<additionalResource>src/main/resources</additionalResource>
-							</additionalResources>
-							<vmArgs>
-								<vmArg>-Dcustom.variable="Hi!"</vmArg>
-								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
-							</vmArgs>
-							<fileAssociations>
-								<fileAssociation>
-									<description>HelloWorld File</description>
-									<extension>hello</extension>
-									<mimeType>application/hello</mimeType>
-								</fileAssociation>
-							</fileAssociations>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!--
-			<plugin>
-				<groupId>io.github.fvarrui</groupId>
-				<artifactId>javapackager</artifactId>
-				<version>1.7.0-SNAPSHOT</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>create-windows-app</goal>
-						</goals>
-						<configuration>
-							<bundleJre>true</bundleJre>
+							<customizedJre>false</customizedJre>
+							<copyDependencies>false</copyDependencies>
+							<generateInstaller>false</generateInstaller>
+							<forceInstaller>true</forceInstaller>
+							<!-- HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
+							<runnableJar>${project.build.directory}/${project.name}-${project.version}-jar-with-dependencies.jar</runnableJar>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
@@ -87,8 +88,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			-->
-			
+
 		</plugins>
 	</build>
 
