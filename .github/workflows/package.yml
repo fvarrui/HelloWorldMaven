@@ -13,6 +13,11 @@ jobs:
 #        run: choco install --force -y wixtoolset
 #      - name: Install Inno Setup
 #        run: choco install --force -y innosetup
+      - name: Set path for candle and light
+        env:
+          WIX_PATH: ${{env.wix}}
+        run: echo "${WIX_PATH}\bin" >> $GITHUB_PATH
+        shell: bash
       - name: Package app
         run: mvn clean package
       - uses: actions/upload-artifact@v2
