@@ -1,7 +1,5 @@
-name: Generate All OS Distributions
-
+name: Packaging for Windows
 on: workflow_dispatch # manually triggered
-
 jobs:
   windows:
     runs-on: windows-latest
