@@ -4,11 +4,11 @@
 
 	<groupId>io.github.fvarrui</groupId>
 	<artifactId>HelloWorldMaven</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<exec.mainClass>io.github.fvarrui.helloworld.Main</exec.mainClass>
 	</properties>
@@ -23,7 +23,7 @@
 
 	<build>
 		<plugins>
-
+			
 			<!-- creates runnable fat jar: HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -63,13 +63,11 @@
 						</goals>
 						<configuration>
 							<platform>windows</platform>
+							<mainClass>${exec.mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
-							<customizedJre>false</customizedJre>
-							<copyDependencies>false</copyDependencies>
-							<generateInstaller>false</generateInstaller>
-							<forceInstaller>true</forceInstaller>
-							<!-- HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
-							<runnableJar>${project.build.directory}/${project.name}-${project.version}-jar-with-dependencies.jar</runnableJar>
+							<customizedJre>true</customizedJre>
+							<copyDependencies>true</copyDependencies>
+							<generateInstaller>true</generateInstaller>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
 							</additionalResources>
