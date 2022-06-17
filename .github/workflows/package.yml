@@ -9,10 +9,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Install WiX Toolset
-        run: choco install -y wixtoolset
-      - name: Install Inno Setup
-        run: choco install -y innosetup
+#      - name: Install WiX Toolset
+#        run: choco install --force -y wixtoolset
+#      - name: Install Inno Setup
+#        run: choco install --force -y innosetup
       - name: Package app
         run: mvn clean package
       - uses: actions/upload-artifact@v2
