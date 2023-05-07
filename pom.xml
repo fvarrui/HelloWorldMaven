@@ -1,10 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.github.fvarrui</groupId>
 	<artifactId>HelloWorldMaven</artifactId>
 	<version>1.0.0</version>
+
+	<description>HelloWorld sample application</description>
 
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -23,7 +27,7 @@
 
 	<build>
 		<plugins>
-			
+
 			<!-- creates runnable fat jar: HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -54,7 +58,7 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.6.6</version>
+				<version>1.7.2-20230504.125631-4</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -62,10 +66,12 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
+							<!--
+							<name>你好世界</name>
+							-->
 							<platform>windows</platform>
 							<mainClass>${exec.mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
-							<customizedJre>true</customizedJre>
 							<copyDependencies>true</copyDependencies>
 							<generateInstaller>true</generateInstaller>
 							<additionalResources>
@@ -82,6 +88,25 @@
 									<mimeType>application/hello</mimeType>
 								</fileAssociation>
 							</fileAssociations>
+							<winConfig>
+								<exeCreationTool>winrun4j</exeCreationTool>
+								<generateSetup>false</generateSetup>
+								<generateMsi>false</generateMsi>
+								<!--
+								<generatePortable>true</generatePortable>
+								-->
+							</winConfig>
+							<linuxConfig>
+								<categories>
+									<category>Game</category>
+									<category>System</category>
+									<category>Utility</category>
+								</categories>
+								<!--
+								<generateSnap>true</generateSnap>
+								-->
+							</linuxConfig>
+							<forceInstaller>true</forceInstaller>
 						</configuration>
 					</execution>
 				</executions>
@@ -89,5 +114,20 @@
 
 		</plugins>
 	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>nexus-snapshot-repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
