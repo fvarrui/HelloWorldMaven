@@ -7,9 +7,22 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Scanner;
 
+import com.sun.jna.Native;
+import com.sun.jna.NativeLong;
+import com.sun.jna.WString;
+
 public class Main {
 
+	private static native NativeLong SetCurrentProcessExplicitAppUserModelID(WString appID);
+
+	static {
+	    if (System.getProperty("os.name").startsWith("Windows")) {
+	    	Native.register("shell32");
+	    }
+	}
+
 	public static void main(String[] args) throws IOException {
+		
 		if (args.length > 0) {
 			String argument = args[0];
 			switch (argument) {
@@ -22,9 +35,21 @@ public class Main {
 			case "--issue-228":
 				issue228();
 				return;
+			case "--issue-320":
+			    issue320();
+			    break;
 			}
 		}
 		HelloWorldFrame.main(args);
+	}
+
+	private static void issue320() {
+		if (System.getProperty("os.name").startsWith("Windows")) {
+			String appID = Main.class.getName();
+			if (SetCurrentProcessExplicitAppUserModelID(new WString(appID)).longValue() != 0) {
+				throw new RuntimeException("Unable to set current process explicit AppUserModelID to: " + appID);
+			}
+		}
 	}
 
 	private static void version() {
@@ -45,7 +70,8 @@ public class Main {
 
 	private static void issue228() {
 		try {
-			String url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CNdt=t&q=" + URLEncoder.encode("word", "UTF-8");
+			String url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CNdt=t&q="
+					+ URLEncoder.encode("word", "UTF-8");
 			URL serverUrl = new URL(url);
 			HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
 			conn.setRequestMethod("GET");

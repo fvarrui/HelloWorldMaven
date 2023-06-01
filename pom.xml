@@ -8,7 +8,7 @@
 	<artifactId>HelloWorldMaven</artifactId>
 	<version>1.0.0</version>
 
-	<description>HelloWorld sample application</description>
+	<description>你好世界示例应用程序</description>
 
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -23,12 +23,18 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.7</version>
 		</dependency>
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.13.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
 
-			<!-- creates runnable fat jar: HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
+			<!-- creates runnable fat jar:
+			HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -58,7 +64,10 @@
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.7.2-20230504.125631-4</version>
+				<version>1.7.3-SNAPSHOT</version>
+				<!--
+				<version>1.7.3-20230522.101925-3</version>
+				-->
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -66,21 +75,15 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<!--
-							<name>你好世界</name>
-							-->
-							<platform>windows</platform>
+							<platform>mac</platform>
 							<mainClass>${exec.mainClass}</mainClass>
 							<bundleJre>true</bundleJre>
 							<copyDependencies>true</copyDependencies>
 							<generateInstaller>true</generateInstaller>
 							<additionalResources>
 								<additionalResource>src/main/resources/info.txt</additionalResource>
+								<additionalResource>HelloWorldMaven.l4j.ini</additionalResource>
 							</additionalResources>
-							<vmArgs>
-								<vmArg>-Dcustom.variable="Hi!"</vmArg>
-								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
-							</vmArgs>
 							<fileAssociations>
 								<fileAssociation>
 									<description>HelloWorld File</description>
@@ -89,9 +92,11 @@
 								</fileAssociation>
 							</fileAssociations>
 							<winConfig>
-								<exeCreationTool>winrun4j</exeCreationTool>
+								<exeCreationTool>launch4j</exeCreationTool>
 								<generateSetup>false</generateSetup>
 								<generateMsi>false</generateMsi>
+								<shortcutName>Hello Super World</shortcutName>
+								<language>SIMPLIFIED_CHINESE</language>
 								<!--
 								<generatePortable>true</generatePortable>
 								-->
@@ -106,7 +111,6 @@
 								<generateSnap>true</generateSnap>
 								-->
 							</linuxConfig>
-							<forceInstaller>true</forceInstaller>
 						</configuration>
 					</execution>
 				</executions>
