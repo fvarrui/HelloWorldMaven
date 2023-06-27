@@ -8,7 +8,9 @@
 	<artifactId>HelloWorldMaven</artifactId>
 	<version>1.0.0</version>
 
+	<!--
 	<description>你好世界示例应用程序</description>
+	-->
 
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -65,54 +67,95 @@
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
 				<version>1.7.3-SNAPSHOT</version>
-				<!--
-				<version>1.7.3-20230522.101925-3</version>
-				-->
+				<configuration>
+					<bundleJre>false</bundleJre>
+					<copyDependencies>true</copyDependencies>
+					<generateInstaller>true</generateInstaller>
+					<additionalResources>
+						<additionalResource>src/main/resources/info.txt</additionalResource>
+						<additionalResource>HelloWorldMaven.l4j.ini</additionalResource>
+					</additionalResources>
+					<executableName>HolaMundo</executableName>
+					<vmArgs>
+						<vmArg>-Dcustom.variable="Hi!"</vmArg>
+						<vmArg>-Dother.custom.variable="Bye!"</vmArg>
+					</vmArgs>
+					<fileAssociations>
+						<fileAssociation>
+							<description>HelloWorld File</description>
+							<extension>hello</extension>
+							<mimeType>application/hello</mimeType>
+						</fileAssociation>
+					</fileAssociations>
+				</configuration>
 				<executions>
 					<execution>
 						<phase>package</phase>
 						<goals>
 							<goal>package</goal>
 						</goals>
+					</execution>
+					<!--
+					<execution>
+						<id>windows-setup</id>
+						<phase>package</phase>
 						<configuration>
-							<platform>mac</platform>
-							<mainClass>${exec.mainClass}</mainClass>
-							<bundleJre>true</bundleJre>
-							<copyDependencies>true</copyDependencies>
-							<generateInstaller>true</generateInstaller>
-							<additionalResources>
-								<additionalResource>src/main/resources/info.txt</additionalResource>
-								<additionalResource>HelloWorldMaven.l4j.ini</additionalResource>
-							</additionalResources>
-							<fileAssociations>
-								<fileAssociation>
-									<description>HelloWorld File</description>
-									<extension>hello</extension>
-									<mimeType>application/hello</mimeType>
-								</fileAssociation>
-							</fileAssociations>
+							<platform>windows</platform>
 							<winConfig>
-								<exeCreationTool>launch4j</exeCreationTool>
-								<generateSetup>false</generateSetup>
+								<generateSetup>true</generateSetup>
 								<generateMsi>false</generateMsi>
-								<shortcutName>Hello Super World</shortcutName>
-								<language>SIMPLIFIED_CHINESE</language>
-								<!--
-								<generatePortable>true</generatePortable>
-								-->
+								<registry>
+									<entries>
+										<entry>
+											<key>HKCR:*\shell\${project.name}</key>
+											<valueName>Icon</valueName>
+											<valueType>REG_SZ</valueType>
+											<valueData>{app}\{#MyAppExeName}</valueData>
+										</entry>
+										<entry>
+											<key>HKCR:*\shell\${project.name}\command</key>
+											<valueName></valueName>
+											<valueType>REG_SZ</valueType>
+											<valueData>{app}\{#MyAppExeName} %1</valueData>
+										</entry>
+									</entries>
+								</registry>
 							</winConfig>
-							<linuxConfig>
-								<categories>
-									<category>Game</category>
-									<category>System</category>
-									<category>Utility</category>
-								</categories>
-								<!--
-								<generateSnap>true</generateSnap>
-								-->
-							</linuxConfig>
+						</configuration>
+					</execution> 
+					-->
+					<!--
+					<execution>
+						<id>windows-msi</id>
+						<phase>package</phase>
+						<goals>
+							<goal>package</goal>
+						</goals>
+						<configuration>
+							<platform>windows</platform>
+							<winConfig>
+								<generateSetup>false</generateSetup>
+								<generateMsi>true</generateMsi>
+								<registry>
+									<entries>
+										<entry>
+											<key>HKCR:*\shell\${project.name}</key>
+											<valueName>Icon</valueName>
+											<valueType>REG_SZ</valueType>
+											<valueData>[#EXEFILE]</valueData>
+										</entry>
+										<entry>
+											<key>HKCR:*\shell\${project.name}\command</key>
+											<valueName></valueName>
+											<valueType>REG_SZ</valueType>
+											<valueData>[#EXEFILE] %1</valueData>
+										</entry>
+									</entries>
+								</registry>
+							</winConfig>
 						</configuration>
 					</execution>
+					-->
 				</executions>
 			</plugin>
 
