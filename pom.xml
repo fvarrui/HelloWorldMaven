@@ -68,7 +68,7 @@
 				<artifactId>javapackager</artifactId>
 				<version>1.7.3-SNAPSHOT</version>
 				<configuration>
-					<bundleJre>false</bundleJre>
+					<bundleJre>true</bundleJre>
 					<copyDependencies>true</copyDependencies>
 					<generateInstaller>true</generateInstaller>
 					<additionalResources>
@@ -87,6 +87,15 @@
 							<mimeType>application/hello</mimeType>
 						</fileAssociation>
 					</fileAssociations>
+					<templates>
+						<template>
+							<name>windows/iss.vtl</name>
+							<bom>true</bom>
+						</template>
+					</templates>
+					<winConfig>
+						<generateMsi>false</generateMsi>
+					</winConfig>
 				</configuration>
 				<executions>
 					<execution>
@@ -94,6 +103,9 @@
 						<goals>
 							<goal>package</goal>
 						</goals>
+						<configuration>
+							<platform>linux</platform>
+						</configuration>					
 					</execution>
 					<!--
 					<execution>
