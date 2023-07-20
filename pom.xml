@@ -13,8 +13,8 @@
 	-->
 
 	<properties>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<exec.mainClass>io.github.fvarrui.helloworld.Main</exec.mainClass>
 	</properties>
@@ -62,7 +62,6 @@
 				</executions>
 			</plugin>
 
-			<!-- package the app using the runnable fat jar -->
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
@@ -87,87 +86,22 @@
 							<mimeType>application/hello</mimeType>
 						</fileAssociation>
 					</fileAssociations>
-					<templates>
-						<template>
-							<name>windows/iss.vtl</name>
-							<bom>true</bom>
-						</template>
-					</templates>
 					<winConfig>
 						<generateMsi>false</generateMsi>
 					</winConfig>
 				</configuration>
 				<executions>
 					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>package</goal>
-						</goals>
-						<configuration>
-							<platform>linux</platform>
-						</configuration>					
-					</execution>
-					<!--
-					<execution>
 						<id>windows-setup</id>
 						<phase>package</phase>
 						<configuration>
-							<platform>windows</platform>
+							<platform>auto</platform>
 							<winConfig>
-								<generateSetup>true</generateSetup>
+								<generateSetup>false</generateSetup>
 								<generateMsi>false</generateMsi>
-								<registry>
-									<entries>
-										<entry>
-											<key>HKCR:*\shell\${project.name}</key>
-											<valueName>Icon</valueName>
-											<valueType>REG_SZ</valueType>
-											<valueData>{app}\{#MyAppExeName}</valueData>
-										</entry>
-										<entry>
-											<key>HKCR:*\shell\${project.name}\command</key>
-											<valueName></valueName>
-											<valueType>REG_SZ</valueType>
-											<valueData>{app}\{#MyAppExeName} %1</valueData>
-										</entry>
-									</entries>
-								</registry>
 							</winConfig>
 						</configuration>
 					</execution> 
-					-->
-					<!--
-					<execution>
-						<id>windows-msi</id>
-						<phase>package</phase>
-						<goals>
-							<goal>package</goal>
-						</goals>
-						<configuration>
-							<platform>windows</platform>
-							<winConfig>
-								<generateSetup>false</generateSetup>
-								<generateMsi>true</generateMsi>
-								<registry>
-									<entries>
-										<entry>
-											<key>HKCR:*\shell\${project.name}</key>
-											<valueName>Icon</valueName>
-											<valueType>REG_SZ</valueType>
-											<valueData>[#EXEFILE]</valueData>
-										</entry>
-										<entry>
-											<key>HKCR:*\shell\${project.name}\command</key>
-											<valueName></valueName>
-											<valueType>REG_SZ</valueType>
-											<valueData>[#EXEFILE] %1</valueData>
-										</entry>
-									</entries>
-								</registry>
-							</winConfig>
-						</configuration>
-					</execution>
-					-->
 				</executions>
 			</plugin>
 
