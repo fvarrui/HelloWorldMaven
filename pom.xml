@@ -94,6 +94,9 @@
 					<execution>
 						<id>windows-setup</id>
 						<phase>package</phase>
+						<goals>
+							<goal>package</goal>
+						</goals>
 						<configuration>
 							<platform>auto</platform>
 							<winConfig>
