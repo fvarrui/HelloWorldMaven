@@ -13,8 +13,8 @@
 	-->
 
 	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>9</maven.compiler.target>
+		<maven.compiler.source>9</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<exec.mainClass>io.github.fvarrui.helloworld.Main</exec.mainClass>
 	</properties>
@@ -33,10 +33,12 @@
 	</dependencies>
 
 	<build>
+
 		<plugins>
 
 			<!-- creates runnable fat jar:
 			HelloWorldMaven-1.0.0-SNAPSHOT-jar-with-dependencies.jar -->
+			<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -61,35 +63,12 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 
 			<plugin>
 				<groupId>io.github.fvarrui</groupId>
 				<artifactId>javapackager</artifactId>
-				<version>1.7.2</version>
-				<configuration>
-					<bundleJre>true</bundleJre>
-					<copyDependencies>true</copyDependencies>
-					<generateInstaller>true</generateInstaller>
-					<additionalResources>
-						<additionalResource>src/main/resources/info.txt</additionalResource>
-						<additionalResource>HelloWorldMaven.l4j.ini</additionalResource>
-					</additionalResources>
-					<executableName>HolaMundo</executableName>
-					<vmArgs>
-						<vmArg>-Dcustom.variable="Hi!"</vmArg>
-						<vmArg>-Dother.custom.variable="Bye!"</vmArg>
-					</vmArgs>
-					<fileAssociations>
-						<fileAssociation>
-							<description>HelloWorld File</description>
-							<extension>hello</extension>
-							<mimeType>application/hello</mimeType>
-						</fileAssociation>
-					</fileAssociations>
-					<winConfig>
-						<generateMsi>false</generateMsi>
-					</winConfig>
-				</configuration>
+				<version>1.7.5</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -97,13 +76,31 @@
 							<goal>package</goal>
 						</goals>
 						<configuration>
-							<platform>auto</platform>
+							<platform>windows</platform>
+							<bundleJre>true</bundleJre>
+							<copyDependencies>true</copyDependencies>
+							<generateInstaller>false</generateInstaller>
+							<additionalResources>
+								<additionalResource>src/main/resources/info.txt</additionalResource>
+								<additionalResource>HelloWorldMaven.l4j.ini</additionalResource>
+							</additionalResources>
+							<vmArgs>
+								<vmArg>-Dcustom.variable="Hi!"</vmArg>
+								<vmArg>-Dother.custom.variable="Bye!"</vmArg>
+							</vmArgs>
+							<fileAssociations>
+								<fileAssociation>
+									<description>HelloWorld File</description>
+									<extension>hello</extension>
+									<mimeType>application/hello</mimeType>
+								</fileAssociation>
+							</fileAssociations>
 							<winConfig>
-								<generateSetup>true</generateSetup>
-								<generateMsi>true</generateMsi>
+								<headerType>console</headerType>
+								<icoFile>src/main/resources/HelloWorldMaven.ico</icoFile>
 							</winConfig>
 						</configuration>
-					</execution> 
+					</execution>
 				</executions>
 			</plugin>
 
